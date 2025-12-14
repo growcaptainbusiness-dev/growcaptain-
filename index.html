@@ -68,8 +68,7 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            min-width: fit-content;
+            font-size: 1.25rem;
         }
 
         .logo-icon {
@@ -83,7 +82,6 @@
             font-weight: 700;
             color: white;
             box-shadow: 0 8px 16px rgba(129, 53, 136, 0.25);
-            flex-shrink: 0;
         }
 
         .nav-links {
@@ -102,7 +100,6 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.3s;
-            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -120,8 +117,6 @@
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s;
-            font-size: 0.9rem;
-            white-space: nowrap;
         }
 
         .nav-cta:hover {
@@ -136,15 +131,12 @@
             border: none;
             cursor: pointer;
             color: white;
-            padding: 0.5rem;
-            touch-action: manipulation;
         }
 
         .hamburger span {
             width: 1.5rem;
             height: 2px;
             background: white;
-            transition: all 0.3s ease;
         }
 
         @media (min-width: 768px) {
@@ -172,7 +164,6 @@
             justify-content: center;
             z-index: 100;
             padding: 1rem;
-            overflow-y: auto;
         }
 
         .modal-overlay.active {
@@ -183,7 +174,7 @@
             background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(3, 7, 18, 0.99) 100%);
             border: 1px solid rgba(147, 51, 234, 0.3);
             border-radius: 1rem;
-            padding: clamp(1.5rem, 5vw, 2rem);
+            padding: 2rem;
             width: 100%;
             max-width: 500px;
             max-height: 90vh;
@@ -199,7 +190,7 @@
         .modal-header h2 {
             color: white;
             margin-bottom: 0.5rem;
-            font-size: clamp(1.3rem, 4vw, 1.5rem);
+            font-size: 1.5rem;
         }
 
         .modal-header p {
@@ -216,8 +207,6 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
-            padding: 0.5rem;
-            touch-action: manipulation;
         }
 
         .form-group {
@@ -240,10 +229,8 @@
             border: 1px solid rgba(147, 51, 234, 0.3);
             color: white;
             border-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: all 0.3s;
-            -webkit-appearance: none;
-            appearance: none;
         }
 
         .form-input:focus,
@@ -259,14 +246,8 @@
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .form-row {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         .submit-btn {
@@ -280,7 +261,6 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
-            touch-action: manipulation;
         }
 
         .submit-btn:hover {
@@ -300,7 +280,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: clamp(2rem, 5vw, 4rem) 1rem;
+            padding: 2rem 1rem;
         }
 
         .hero-background {
@@ -317,41 +297,26 @@
 
         .glow-1 {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, transparent 70%);
             border-radius: 50%;
-            top: 5%;
-            left: 5%;
+            top: 10%;
+            left: 10%;
             filter: blur(60px);
             animation: float 8s ease-in-out infinite;
         }
 
         .glow-2 {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: radial-gradient(circle, rgba(234, 88, 12, 0.15) 0%, transparent 70%);
             border-radius: 50%;
-            bottom: 5%;
-            right: 5%;
+            bottom: 10%;
+            right: 10%;
             filter: blur(60px);
             animation: float 8s ease-in-out infinite 1s;
-        }
-
-        @media (min-width: 768px) {
-            .glow-1 {
-                width: 400px;
-                height: 400px;
-                top: 10%;
-                left: 10%;
-            }
-            .glow-2 {
-                width: 400px;
-                height: 400px;
-                bottom: 10%;
-                right: 10%;
-            }
         }
 
         @keyframes float {
@@ -377,10 +342,10 @@
         }
 
         h1 {
-            font-size: clamp(2rem, 6vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 700;
             line-height: 1.15;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.01em;
         }
 
@@ -392,7 +357,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(0.95rem, 3vw, 1.25rem);
+            font-size: clamp(1rem, 3vw, 1.25rem);
             color: var(--color-dark-300);
             margin-bottom: 2rem;
             max-width: 700px;
@@ -416,20 +381,15 @@
         }
 
         .btn {
-            padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+            padding: 1rem 2rem;
             border-radius: 0.5rem;
             font-weight: 600;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: 1rem;
             text-decoration: none;
             cursor: pointer;
             border: none;
             transition: all 0.3s;
             display: inline-block;
-            touch-action: manipulation;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .btn-primary {
@@ -443,10 +403,6 @@
         .btn-primary:hover {
             box-shadow: 0 12px 32px rgba(129, 53, 136, 0.45);
             transform: translateY(-3px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -484,7 +440,6 @@
             cursor: pointer;
             box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
             transition: all 0.3s;
-            touch-action: manipulation;
         }
 
         .ai-button:hover {
@@ -497,8 +452,7 @@
             position: fixed;
             bottom: 120px;
             right: 2rem;
-            width: 100%;
-            max-width: 380px;
+            width: 380px;
             height: 500px;
             background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(3, 7, 18, 0.98) 100%);
             border: 1px solid rgba(147, 51, 234, 0.3);
@@ -507,15 +461,6 @@
             display: none;
             flex-direction: column;
             box-shadow: 0 10px 40px rgba(147, 51, 234, 0.2);
-        }
-
-        @media (max-width: 640px) {
-            .chatbot-window {
-                right: 1rem;
-                left: 1rem;
-                max-width: none;
-                height: 400px;
-            }
         }
 
         .chatbot-window.active {
@@ -529,7 +474,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-shrink: 0;
         }
 
         .chatbot-header h3 {
@@ -545,7 +489,6 @@
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0;
-            touch-action: manipulation;
         }
 
         .chatbot-messages {
@@ -568,12 +511,11 @@
         }
 
         .message-content {
-            max-width: 85%;
+            max-width: 80%;
             padding: 0.75rem 1rem;
             border-radius: 0.75rem;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            font-size: 0.9rem;
             line-height: 1.4;
-            word-wrap: break-word;
         }
 
         .message.bot .message-content {
@@ -592,7 +534,6 @@
             border-top: 1px solid rgba(147, 51, 234, 0.2);
             display: flex;
             gap: 0.5rem;
-            flex-shrink: 0;
         }
 
         .chatbot-input {
@@ -604,8 +545,6 @@
             border-radius: 0.5rem;
             font-size: 0.9rem;
             outline: none;
-            -webkit-appearance: none;
-            appearance: none;
         }
 
         .chatbot-input:focus {
@@ -622,9 +561,6 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s;
-            touch-action: manipulation;
-            min-height: 44px;
-            min-width: 44px;
         }
 
         .chatbot-send:hover {
@@ -636,7 +572,6 @@
             grid-template-columns: 1fr;
             gap: 0.5rem;
             padding: 0 1rem 1rem;
-            flex-shrink: 0;
         }
 
         .quick-reply {
@@ -646,13 +581,8 @@
             padding: 0.75rem;
             border-radius: 0.5rem;
             cursor: pointer;
-            font-size: clamp(0.8rem, 2vw, 0.85rem);
+            font-size: 0.85rem;
             transition: all 0.2s;
-            touch-action: manipulation;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .quick-reply:hover {
@@ -663,10 +593,10 @@
         /* Stats Section */
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
-            padding: clamp(1.5rem, 4vw, 2.5rem);
+            padding: 2.5rem;
             background: linear-gradient(135deg, rgba(20, 24, 41, 0.7) 0%, rgba(20, 28, 45, 0.5) 100%);
             border-radius: 1rem;
             border: 1px solid rgba(212, 175, 55, 0.12);
@@ -678,27 +608,25 @@
         }
 
         .stat-number {
-            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-size: 2.25rem;
             font-weight: 700;
             color: var(--color-gold);
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: clamp(0.8rem, 2vw, 0.875rem);
+            font-size: 0.875rem;
             color: var(--color-dark-300);
-            line-height: 1.3;
         }
 
         /* Section Styles */
         section {
-            padding: clamp(3rem, 8vw, 5rem) 1rem;
+            padding: 5rem 1rem;
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1rem;
         }
 
         .section-header {
@@ -707,45 +635,29 @@
         }
 
         .section-header h2 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
 
         .section-header p {
-            font-size: clamp(0.95rem, 3vw, 1.125rem);
+            font-size: 1.125rem;
             color: var(--color-dark-300);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Grid Layouts */
-        .captains-grid,
-        .training-grid,
-        .benefits-grid {
+        /* Captains Grid */
+        .captains-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        @media (min-width: 640px) {
-            .captains-grid,
-            .training-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .captains-grid,
-            .training-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         .card {
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: 2rem;
             border-radius: 1rem;
             background: linear-gradient(135deg, rgba(20, 24, 41, 0.8) 0%, rgba(20, 28, 45, 0.6) 100%);
             border: 1px solid rgba(212, 175, 55, 0.1);
@@ -760,7 +672,7 @@
         }
 
         .card h3 {
-            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
@@ -779,11 +691,10 @@
 
         .card-text {
             color: var(--color-dark-300);
-            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .card-outcome {
-            font-size: clamp(1.1rem, 3vw, 1.25rem);
+            font-size: 1.25rem;
             font-weight: bold;
             color: white;
         }
@@ -808,8 +719,14 @@
         }
 
         /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
         .benefit-item {
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: 2rem;
             border-radius: 1rem;
             background: linear-gradient(135deg, rgba(20, 24, 41, 0.7) 0%, rgba(20, 28, 45, 0.5) 100%);
             border: 1px solid rgba(212, 175, 55, 0.1);
@@ -835,16 +752,77 @@
             align-items: center;
             color: var(--color-neon-purple);
             margin-bottom: 1rem;
-            font-size: clamp(1rem, 2vw, 1.1rem);
+            font-size: 1.1rem;
         }
 
         .benefit-item p {
             color: var(--color-dark-300);
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        /* Training Cards */
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, rgba(10, 14, 26, 0.95) 0%, rgba(7, 10, 18, 0.98) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+            color: var(--color-dark-300);
+        }
+
+        footer a {
+            color: var(--color-neon-purple);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--color-neon-orange);
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 3rem 1rem;
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .chatbot-window {
+                width: calc(100% - 2rem);
+                height: 400px;
+                right: 1rem;
+                bottom: 100px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--color-neon-purple);
+            outline-offset: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        /* Training Section Styles */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
         .training-card {
             border-radius: 1rem;
             background: linear-gradient(135deg, rgba(20, 24, 41, 0.8) 0%, rgba(20, 28, 45, 0.6) 100%);
@@ -867,26 +845,26 @@
         }
 
         .training-card h3 {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin: 1.5rem clamp(1rem, 3vw, 1.5rem) 0.5rem;
+            font-size: 1.5rem;
+            margin: 1.5rem 1.5rem 0.5rem;
             color: white;
         }
 
         .training-duration {
-            margin: 0 clamp(1rem, 3vw, 1.5rem);
+            margin: 0 1.5rem;
             font-size: 0.9rem;
             color: var(--color-neon-orange);
             font-weight: 600;
         }
 
         .training-content {
-            padding: 1rem clamp(1rem, 3vw, 1.5rem);
+            padding: 1rem 1.5rem;
             color: var(--color-dark-300);
         }
 
         .training-content p {
             margin: 0;
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            font-size: 0.95rem;
         }
 
         .training-content ul {
@@ -896,7 +874,7 @@
 
         .training-content li {
             padding: 0.5rem 0;
-            font-size: clamp(0.85rem, 2vw, 0.9rem);
+            font-size: 0.9rem;
         }
 
         .training-content li:before {
@@ -904,85 +882,6 @@
             color: var(--color-neon-purple);
             font-weight: bold;
             margin-right: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(180deg, rgba(10, 14, 26, 0.95) 0%, rgba(7, 10, 18, 0.98) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-            padding: clamp(2rem, 5vw, 4rem) 1rem 2rem;
-            text-align: center;
-            color: var(--color-dark-300);
-        }
-
-        footer a {
-            color: var(--color-neon-purple);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: var(--color-neon-orange);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-4 {
-            margin-top: 2rem;
-        }
-
-        :focus-visible {
-            outline: 2px solid var(--color-neon-purple);
-            outline-offset: 2px;
-        }
-
-        /* Mobile-specific adjustments */
-        @media (max-width: 640px) {
-            nav > div {
-                padding: 0.75rem 1rem;
-            }
-
-            section {
-                padding: clamp(2rem, 5vw, 3rem) 1rem;
-            }
-
-            .hero {
-                padding: clamp(1.5rem, 4vw, 2rem) 1rem;
-            }
-
-            h1 {
-                margin-bottom: 1rem;
-            }
-
-            .hero-ctas {
-                gap: 0.75rem;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 0.75rem 1.5rem;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .captains-grid,
-            .training-grid,
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-content {
-                border-radius: 1rem;
-            }
         }
     </style>
 </head>
@@ -1237,94 +1136,6 @@
         </div>
     </section>
 
-    <!-- Training Section -->
-    <section id="training">
-        <div class="container">
-            <div class="section-header">
-                <h2>Growth <span style="color: var(--color-neon-purple);">Training Programs</span></h2>
-                <p>Intensive bootcamps designed to transform your team. Learn execution-ready strategies and implement immediately.</p>
-            </div>
-
-            <div class="training-grid">
-                <div class="training-card">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1765687489/search_images/4c2f166b795fb09cf15bb0735ab360a74e41ab37.jpg" alt="Growth Audit Training" class="training-image">
-                    <h3>🔍 Growth Audit Training</h3>
-                    <p class="training-duration">3-4 hours diagnostic</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Understanding your growth gaps, audit methodology, diagnostic framework</p>
-                        <ul style="margin-top: 1rem; color: var(--color-dark-300); padding-left: 1.5rem;">
-                            <li>Learn audit framework</li>
-                            <li>Identify growth blockers</li>
-                            <li>Create audit roadmap</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
-                        <span class="badge">₹25K+</span>
-                        <span class="badge">5-10 people</span>
-                    </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('Growth Audit Training')">Enroll Now</button>
-                </div>
-
-                <div class="training-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Day Workshop" class="training-image">
-                    <h3>⚡ 1-Day Workshop</h3>
-                    <p class="training-duration">8 hours intensive</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Quick wins, team alignment, specific problem-solving</p>
-                        <ul style="margin-top: 1rem; color: var(--color-dark-300); padding-left: 1.5rem;">
-                            <li>Morning: Problem diagnosis</li>
-                            <li>Afternoon: Solution design</li>
-                            <li>Evening: Action plan creation</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
-                        <span class="badge">₹50K+</span>
-                        <span class="badge">5-15 people</span>
-                    </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('1-Day Workshop')">Enroll Now</button>
-                </div>
-
-                <div class="training-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="2-Week Program" class="training-image">
-                    <h3>📅 2-Week Program</h3>
-                    <p class="training-duration">10 sessions, hands-on</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Deep implementation, system building, team training</p>
-                        <ul style="margin-top: 1rem; color: var(--color-dark-300); padding-left: 1.5rem;">
-                            <li>Daily sessions (2 hours)</li>
-                            <li>Live implementation</li>
-                            <li>Group support & feedback</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
-                        <span class="badge">₹1.5L+</span>
-                        <span class="badge">10-25 people</span>
-                    </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('2-Week Program')">Enroll Now</button>
-                </div>
-
-                <div class="training-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Month Program" class="training-image">
-                    <h3>🎯 1-Month Program</h3>
-                    <p class="training-duration">20+ sessions, full transformation</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Complete system overhaul, advanced strategies, ongoing support</p>
-                        <ul style="margin-top: 1rem; color: var(--color-dark-300); padding-left: 1.5rem;">
-                            <li>4x per week sessions</li>
-                            <li>1-on-1 coaching</li>
-                            <li>Post-program support</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
-                        <span class="badge">₹3.5L+</span>
-                        <span class="badge">5-20 people</span>
-                    </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('1-Month Program')">Enroll Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Section -->
     <section id="services">
         <div class="container">
@@ -1333,7 +1144,7 @@
                 <p>Not workshops. Not reports. Real systems that fix real problems. Fast.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1.5rem, 3vw, 2rem);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
                 <div class="card">
                     <h3 style="color: var(--color-neon-purple); margin-bottom: 1.5rem;">▼ FUNNELS</h3>
                     <div class="card-section">
@@ -1441,12 +1252,12 @@
                 <p>Latest marketing strategies, growth hacks, and industry insights to accelerate your business.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(1.5rem, 3vw, 2rem); margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <!-- Insight Card 1 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1764098792/search_images/c382feec67995a7355bdcaa7f8af9ad1fb2dab7b.jpg" alt="AI Marketing Trends" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.75rem 0.75rem 0 0; margin: -2rem -2rem 1rem -2rem;">
-                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">AI-Powered Marketing in 2025</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">Automation, personalization at scale, and predictive analytics are reshaping customer engagement. 73% of B2B companies already use AI in their marketing stack.</p>
+                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: 1.1rem;">AI-Powered Marketing in 2025</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">Automation, personalization at scale, and predictive analytics are reshaping customer engagement. 73% of B2B companies already use AI in their marketing stack.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">AI</span>
                         <span class="badge">Automation</span>
@@ -1457,8 +1268,8 @@
                 <!-- Insight Card 2 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1765687607/search_images/90498d8435b259c659dbea9a2b76b69bae470dcb.jpg" alt="Customer Data Analytics" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.75rem 0.75rem 0 0; margin: -2rem -2rem 1rem -2rem;">
-                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">First-Party Data Strategy</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">With third-party cookies dying, brands must build direct customer relationships. Direct data collection improves targeting by 40% and reduces CAC significantly.</p>
+                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: 1.1rem;">First-Party Data Strategy</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">With third-party cookies dying, brands must build direct customer relationships. Direct data collection improves targeting by 40% and reduces CAC significantly.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">Data</span>
                         <span class="badge">Privacy</span>
@@ -1469,8 +1280,8 @@
                 <!-- Insight Card 3 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1763914552/search_images/b95396f9bd2d1d780e9ff362d9844e14c15ec72e.jpg" alt="Content Marketing ROI" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0.75rem 0.75rem 0 0; margin: -2rem -2rem 1rem -2rem;">
-                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">Content ROI Measurement</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">Data-driven content marketing shows 3x better conversion rates. Brands tracking content performance see 4x more qualified leads and 2x better retention.</p>
+                    <h4 style="color: var(--color-neon-purple); margin-bottom: 0.75rem; font-size: 1.1rem;">Content ROI Measurement</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">Data-driven content marketing shows 3x better conversion rates. Brands tracking content performance see 4x more qualified leads and 2x better retention.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">Content</span>
                         <span class="badge">ROI</span>
@@ -1480,8 +1291,8 @@
 
                 <!-- Insight Card 4 -->
                 <div class="card">
-                    <h4 style="color: var(--color-neon-orange); margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">📱 Social Commerce Growth</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">Social shopping is booming with 50% of Gen Z making purchases directly from social platforms. WhatsApp Commerce & Instagram Shop are the new frontiers for D2C brands.</p>
+                    <h4 style="color: var(--color-neon-orange); margin-bottom: 0.75rem; font-size: 1.1rem;">📱 Social Commerce Growth</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">Social shopping is booming with 50% of Gen Z making purchases directly from social platforms. WhatsApp Commerce & Instagram Shop are the new frontiers for D2C brands.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">E-commerce</span>
                         <span class="badge">Social</span>
@@ -1491,8 +1302,8 @@
 
                 <!-- Insight Card 5 -->
                 <div class="card">
-                    <h4 style="color: #4ade80; margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">🎯 Hyper-Personalization</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">Customers expect personalized experiences. Brands using AI-driven personalization see 20% higher conversion rates and 25% increase in average order value.</p>
+                    <h4 style="color: #4ade80; margin-bottom: 0.75rem; font-size: 1.1rem;">🎯 Hyper-Personalization</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">Customers expect personalized experiences. Brands using AI-driven personalization see 20% higher conversion rates and 25% increase in average order value.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">AI</span>
                         <span class="badge">Experience</span>
@@ -1502,8 +1313,8 @@
 
                 <!-- Insight Card 6 -->
                 <div class="card">
-                    <h4 style="color: #f472b6; margin-bottom: 0.75rem; font-size: clamp(1rem, 2vw, 1.1rem);">🤝 Community Building</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.95rem); margin-bottom: 1rem;">Loyal communities drive sustainable growth. Brands with engaged communities show 3x higher lifetime value and organic 5x word-of-mouth marketing.</p>
+                    <h4 style="color: #f472b6; margin-bottom: 0.75rem; font-size: 1.1rem;">🤝 Community Building</h4>
+                    <p style="color: var(--color-dark-300); font-size: 0.95rem; margin-bottom: 1rem;">Loyal communities drive sustainable growth. Brands with engaged communities show 3x higher lifetime value and organic 5x word-of-mouth marketing.</p>
                     <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
                         <span class="badge">Loyalty</span>
                         <span class="badge">Community</span>
@@ -1518,35 +1329,35 @@
                 <p>Framework-driven approaches that guarantee measurable results.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1.5rem, 3vw, 2rem);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                 <div class="benefit-item">
                     <h4 style="color: var(--color-neon-purple); margin-bottom: 1rem;">▶ The 90-10 Rule</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Focus 90% effort on proven channels. Stop experimenting with everything. 90% of revenue comes from 10% of efforts. Identify your winners and double down.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Focus 90% effort on proven channels. Stop experimenting with everything. 90% of revenue comes from 10% of efforts. Identify your winners and double down.</p>
                 </div>
 
                 <div class="benefit-item">
                     <h4 style="color: var(--color-neon-orange); margin-bottom: 1rem;">⚡ Rapid Testing Framework</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Run 2-3 tests weekly. Implement winners in 48 hours. Slow iteration kills growth. Fast teams with rapid feedback loops win market share 3x faster.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Run 2-3 tests weekly. Implement winners in 48 hours. Slow iteration kills growth. Fast teams with rapid feedback loops win market share 3x faster.</p>
                 </div>
 
                 <div class="benefit-item">
                     <h4 style="color: #4ade80; margin-bottom: 1rem;">🔄 Growth Loops</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Build self-sustaining growth loops. Each customer acquisition should fuel the next. Referral loops, viral mechanics, and content loops compound growth exponentially.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Build self-sustaining growth loops. Each customer acquisition should fuel the next. Referral loops, viral mechanics, and content loops compound growth exponentially.</p>
                 </div>
 
                 <div class="benefit-item">
                     <h4 style="color: #818cf8; margin-bottom: 1rem;">💡 Unit Economics</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Know your CAC, LTV, and payback period. Companies with clear unit economics scale 5x faster. Profitability at unit level is your only growth lever.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Know your CAC, LTV, and payback period. Companies with clear unit economics scale 5x faster. Profitability at unit level is your only growth lever.</p>
                 </div>
 
                 <div class="benefit-item">
                     <h4 style="color: #f472b6; margin-bottom: 1rem;">📊 Data-Driven Decisions</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Gut feelings are expensive. Track every metric. Dashboards beat meetings. Data-driven teams make 3x better decisions with 2x execution speed.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Gut feelings are expensive. Track every metric. Dashboards beat meetings. Data-driven teams make 3x better decisions with 2x execution speed.</p>
                 </div>
 
                 <div class="benefit-item">
                     <h4 style="color: #f97316; margin-bottom: 1rem;">🎯 Channel Stacking</h4>
-                    <p style="color: var(--color-dark-300); font-size: clamp(0.9rem, 2vw, 0.9rem); line-height: 1.6;">Don't rely on one channel. Stack 3-4 channels. Diversification reduces risk. Multi-channel strategies show 2.8x higher retention and 40% lower CAC.</p>
+                    <p style="color: var(--color-dark-300); font-size: 0.9rem; line-height: 1.6;">Don't rely on one channel. Stack 3-4 channels. Diversification reduces risk. Multi-channel strategies show 2.8x higher retention and 40% lower CAC.</p>
                 </div>
             </div>
         </div>
@@ -1573,11 +1384,11 @@
                             <li>Create audit roadmap</li>
                         </ul>
                     </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
+                    <div style="margin-top: 1.5rem;">
                         <span class="badge">₹25K+</span>
                         <span class="badge">5-10 people</span>
                     </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('Growth Audit Training')">Enroll Now</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openModal('Growth Audit Training')">Enroll Now</button>
                 </div>
 
                 <div class="training-card">
@@ -1592,11 +1403,11 @@
                             <li>Evening: Action plan creation</li>
                         </ul>
                     </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
+                    <div style="margin-top: 1.5rem;">
                         <span class="badge">₹50K+</span>
                         <span class="badge">5-15 people</span>
                     </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('1-Day Workshop')">Enroll Now</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openModal('1-Day Workshop')">Enroll Now</button>
                 </div>
 
                 <div class="training-card">
@@ -1611,11 +1422,11 @@
                             <li>Group support & feedback</li>
                         </ul>
                     </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
+                    <div style="margin-top: 1.5rem;">
                         <span class="badge">₹1.5L+</span>
                         <span class="badge">10-25 people</span>
                     </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('2-Week Program')">Enroll Now</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openModal('2-Week Program')">Enroll Now</button>
                 </div>
 
                 <div class="training-card">
@@ -1630,11 +1441,11 @@
                             <li>Post-program support</li>
                         </ul>
                     </div>
-                    <div style="margin-top: 1.5rem; margin-left: clamp(1rem, 3vw, 1.5rem);">
+                    <div style="margin-top: 1.5rem;">
                         <span class="badge">₹3.5L+</span>
                         <span class="badge">5-20 people</span>
                     </div>
-                    <button class="btn btn-primary" style="width: calc(100% - 2rem); margin: 1.5rem; margin-bottom: 0;" onclick="openModal('1-Month Program')">Enroll Now</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openModal('1-Month Program')">Enroll Now</button>
                 </div>
             </div>
         </div>
@@ -1660,12 +1471,12 @@
                     <span>GrowCaptain</span>
                 </div>
                 <p>We Navigate. You Scale.</p>
-                <p style="font-size: clamp(0.8rem, 2vw, 0.85rem); margin-top: 1rem; color: var(--color-dark-300);">Growth execution partner for startups and SMEs. Real systems. Real results. Real growth.</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--color-dark-300);">Growth execution partner for startups and SMEs. Real systems. Real results. Real growth.</p>
                 <p style="margin-top: 2rem;"><a href="mailto:info@growcaptain.in">info@growcaptain.in</a></p>
             </div>
             <div style="border-top: 1px solid rgba(147, 51, 234, 0.1); padding-top: 2rem; margin-top: 2rem;">
-                <p style="font-size: clamp(0.85rem, 2vw, 0.9rem);">&copy; 2025 GrowCaptain. All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: clamp(0.8rem, 2vw, 0.85rem);">Built for founders who are serious about execution.</p>
+                <p>&copy; 2025 GrowCaptain. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;">Built for founders who are serious about execution.</p>
             </div>
         </div>
     </footer>
