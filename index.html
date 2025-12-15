@@ -245,6 +245,7 @@
             border-radius:50%;
             opacity:0.3;
         }
+
         .hero-content {
             position:relative;
             z-index:10;
@@ -308,6 +309,61 @@
             background:transparent;
         }
         .btn-secondary:hover { background:rgba(147,51,234,0.1); }
+
+        /* Extra hero animations */
+        .hero-orbit {
+            position:absolute;
+            width:520px;
+            height:520px;
+            border-radius:50%;
+            border:1px solid rgba(129,53,136,0.35);
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            animation:hero-orbit-spin 18s linear infinite;
+            pointer-events:none;
+        }
+        .hero-orbit::before {
+            content:"";
+            position:absolute;
+            width:24px;
+            height:24px;
+            border-radius:50%;
+            background:radial-gradient(circle,var(--color-neon-orange) 0%,transparent 60%);
+            top:-12px;
+            left:50%;
+            transform:translateX(-50%);
+            box-shadow:0 0 20px rgba(255,127,0,0.6);
+        }
+        @keyframes hero-orbit-spin {
+            from { transform:translate(-50%,-50%) rotate(0deg); }
+            to   { transform:translate(-50%,-50%) rotate(360deg); }
+        }
+        .hero-content h1 {
+            animation:hero-title-glow 3s ease-in-out infinite;
+        }
+        @keyframes hero-title-glow {
+            0%,100% { text-shadow:0 0 12px rgba(129,53,136,0.6); }
+            50%     { text-shadow:0 0 24px rgba(255,127,0,0.9); }
+        }
+        .hero-subtitle {
+            opacity:0;
+            transform:translateY(10px);
+            animation:hero-subtitle-up 0.8s ease-out 0.3s forwards;
+        }
+        .hero-ctas {
+            opacity:0;
+            transform:translateY(14px);
+            animation:hero-ctas-up 0.8s ease-out 0.5s forwards;
+        }
+        @keyframes hero-subtitle-up {
+            from { opacity:0; transform:translateY(10px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        @keyframes hero-ctas-up {
+            from { opacity:0; transform:translateY(14px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
 
         /* Chatbot */
         .ai-bubble {
@@ -705,6 +761,7 @@
             <div class="glow-1"></div>
             <div class="glow-2"></div>
         </div>
+        <div class="hero-orbit"></div>
         <div class="hero-content">
             <h1>
                 <span class="gradient">We Navigate.</span><br>
@@ -1061,7 +1118,7 @@
         </div>
     </section>
 
-    <!-- Marketing Insights (below Training) -->
+    <!-- Marketing Insights -->
     <section class="bg-dark" id="insights">
         <div class="container">
             <div class="section-header">
@@ -1070,7 +1127,6 @@
             </div>
 
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-bottom:3rem;">
-                <!-- Insight Card 1 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1764098792/search_images/c382feec67995a7355bdcaa7f8af9ad1fb2dab7b.jpg" alt="AI Marketing Trends" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
                     <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">AI-Powered Marketing in 2025</h4>
@@ -1079,7 +1135,6 @@
                         <span class="badge">AI</span><span class="badge">Automation</span><span class="badge">2025</span>
                     </div>
                 </div>
-                <!-- Insight Card 2 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1765687607/search_images/90498d8435b259c659dbea9a2b76b69bae470dcb.jpg" alt="Customer Data Analytics" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
                     <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">First-Party Data Strategy</h4>
@@ -1088,7 +1143,6 @@
                         <span class="badge">Data</span><span class="badge">Privacy</span><span class="badge">CRM</span>
                     </div>
                 </div>
-                <!-- Insight Card 3 -->
                 <div class="card">
                     <img src="https://pplx-res.cloudinary.com/image/upload/v1763914552/search_images/b95396f9bd2d1d780e9ff362d9844e14c15ec72e.jpg" alt="Content Marketing ROI" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
                     <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">Content ROI Measurement</h4>
@@ -1097,7 +1151,6 @@
                         <span class="badge">Content</span><span class="badge">ROI</span><span class="badge">Analytics</span>
                     </div>
                 </div>
-                <!-- Insight Card 4 -->
                 <div class="card">
                     <h4 style="color:var(--color-neon-orange);margin-bottom:0.75rem;font-size:1.1rem;">📱 Social Commerce Growth</h4>
                     <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Social shopping is booming, with more buyers purchasing directly from social platforms.</p>
@@ -1105,7 +1158,6 @@
                         <span class="badge">E-commerce</span><span class="badge">Social</span><span class="badge">Conversions</span>
                     </div>
                 </div>
-                <!-- Insight Card 5 -->
                 <div class="card">
                     <h4 style="color:#4ade80;margin-bottom:0.75rem;font-size:1.1rem;">🎯 Hyper-Personalization</h4>
                     <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Customers now expect personalized experiences across channels.</p>
@@ -1113,7 +1165,6 @@
                         <span class="badge">AI</span><span class="badge">Experience</span><span class="badge">Conversion</span>
                     </div>
                 </div>
-                <!-- Insight Card 6 -->
                 <div class="card">
                     <h4 style="color:#f472b6;margin-bottom:0.75rem;font-size:1.1rem;">🤝 Community Building</h4>
                     <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Loyal communities drive sustainable growth.</p>
@@ -1123,7 +1174,6 @@
                 </div>
             </div>
 
-            <!-- Proven Growth Strategies -->
             <div class="section-header" style="margin-top:4rem;">
                 <h2>Proven <span style="color:var(--color-neon-purple);">Growth Strategies</span></h2>
                 <p>Framework-driven approaches that guarantee measurable results.</p>
@@ -1399,15 +1449,15 @@
         chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));
 
         const responses={
-            'tell me about sales captain':'Sales Captain builds predictable lead flow and conversion with funnels, scripts, and CRM automation.',
-            'what is your pricing':'We start with a free audit and then offer growth sprints or full execution depending on scope.',
-            'how does implementation work':'We audit, design systems, deploy with your team, and iterate for 3–4 months.',
-            'tell me about ops captain':'Ops Captain reduces chaos with SOPs, workflows, and clear accountability.',
-            'tell me about brand captain':'Brand Captain clarifies your positioning and story so you attract right-fit customers.',
-            'tell me about finance captain':'Finance Captain sets up models and dashboards for clear economics and runway.',
-            'tell me about ai captain':'AI Captain implements automations across CRM, WhatsApp, and internal processes.',
-            'what is growcaptain':'GrowCaptain is a growth execution partner for startups and SMEs across Sales, Ops, Brand, Finance and AI.',
-            'how can i book a call':'Click “Schedule Your Free Audit” or any “Deploy Captain” button and submit your details.',
+            'tell':'Sales Captain builds predictable lead flow and conversion with funnels, scripts, and CRM automation.',
+            'pricing':'We start with a free audit and then offer growth sprints or full execution depending on scope.',
+            'implementation':'We audit, design systems, deploy with your team, and iterate for 3–4 months.',
+            'ops':'Ops Captain reduces chaos with SOPs, workflows, and clear accountability.',
+            'brand':'Brand Captain clarifies your positioning and story so you attract right-fit customers.',
+            'finance':'Finance Captain sets up models and dashboards for clear economics and runway.',
+            'ai':'AI Captain implements automations across CRM, WhatsApp, and internal processes.',
+            'growcaptain':'GrowCaptain is a growth execution partner for startups and SMEs across Sales, Ops, Brand, Finance and AI.',
+            'book':'Click “Schedule Your Free Audit” or any “Deploy Captain” button and submit your details.',
             'default':'Ask about captains, pricing, implementation, or which system to fix first and I’ll guide you.'
         };
 
@@ -1426,7 +1476,7 @@
                 const lower=text.toLowerCase();
                 let botResponse=responses['default'];
                 for(const [key,val] of Object.entries(responses)){
-                    if(key!=='default' && lower.includes(key.split(' ')[0])){
+                    if(key!=='default' && lower.includes(key)){
                         botResponse=val; break;
                     }
                 }
