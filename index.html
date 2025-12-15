@@ -1,1536 +1,1378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrowCaptain - Growth Execution for Startups & SMEs | We Navigate. You Scale.</title>
-    <meta name="description" content="GrowCaptain fixes sales, ops, brand, finance, and automation for startups and SMEs. Execution-ready systems. Real results. Fast.">
-    <meta name="keywords" content="growth consulting, startup scaling, sales optimization, business automation, growth execution">
-    <meta property="og:title" content="GrowCaptain - We Navigate. You Scale.">
-    <meta property="og:description" content="Growth execution partner for startups and SMEs. Fixing sales, ops, brand, finance, and AI automation.">
-    
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrowCaptain - Growth Execution for Startups & SMEs | We Navigate. You Scale.</title>
+  <meta name="description" content="GrowCaptain fixes sales, ops, brand, finance, and automation for startups and SMEs. Execution-ready systems. Real results. Fast.">
+  <meta name="keywords" content="growth consulting, startup scaling, sales optimization, business automation, growth execution">
+  <meta property="og:title" content="GrowCaptain - We Navigate. You Scale.">
+  <meta property="og:description" content="Growth execution partner for startups and SMEs. Fixing sales, ops, brand, finance, and AI automation.">
 
-        :root {
-            --color-dark-900:#0a0e1a;
-            --color-dark-800:#141829;
-            --color-dark-200:#f0f2f7;
-            --color-dark-300:#b8bcc8;
-            --color-neon-purple:#813588;
-            --color-neon-orange:#ff7f00;
-            --color-gold:#d4af37;
-            --color-accent:#2a3f5f;
-        }
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
 
-        html { scroll-behavior:smooth; }
+    :root{
+      --color-dark-900:#0a0e1a;
+      --color-dark-800:#141829;
+      --color-dark-200:#f0f2f7;
+      --color-dark-300:#6b7280;
+      --color-neon-purple:#813588;
+      --color-neon-orange:#ff7f00;
+      --color-gold:#d4af37;
+      --color-accent:#2a3f5f;
+      --surface-main:#e5e7f0;
+      --surface-soft:#d7d9e7;
+      --surface-card:#d0d4ea;
+    }
 
-        body {
-            font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
-            background-color:var(--color-dark-900);
-            color:var(--color-dark-200);
-            line-height:1.65;
-            overflow-x:hidden;
-            letter-spacing:0.3px;
-        }
+    html{scroll-behavior:smooth;}
 
-        /* Navigation */
-        nav {
-            position:sticky;
-            top:0;
-            z-index:50;
-            background:linear-gradient(180deg,rgba(10,14,26,0.98) 0%,rgba(20,24,41,0.95) 100%);
-            backdrop-filter:blur(15px);
-            border-bottom:1px solid rgba(212,175,55,0.15);
-            transition:all 0.3s ease;
-            box-shadow:0 2px 20px rgba(0,0,0,0.3);
-        }
-        nav>div {
-            max-width:1280px;
-            margin:0 auto;
-            padding:1rem 1.5rem;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-        .logo {
-            display:flex;
-            align-items:center;
-            gap:0.5rem;
-            text-decoration:none;
-            color:white;
-            font-weight:bold;
-            font-size:1.25rem;
-        }
-        .logo-icon {
-            width:2.5rem;
-            height:2.5rem;
-            border-radius:0.5rem;
-            background:linear-gradient(135deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-weight:700;
-            color:white;
-            box-shadow:0 8px 16px rgba(129,53,136,0.25);
-        }
-        .nav-links {
-            display:none;
-            gap:2rem;
-            list-style:none;
-        }
-        .nav-links.active { display:flex; }
-        .nav-links a {
-            color:var(--color-dark-300);
-            text-decoration:none;
-            font-size:0.9rem;
-            font-weight:500;
-            transition:color 0.3s;
-        }
-        .nav-links a:hover { color:var(--color-neon-purple); }
-        .nav-cta {
-            display:none;
-            padding:0.5rem 1.5rem;
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            color:white;
-            border:none;
-            border-radius:0.5rem;
-            font-weight:600;
-            cursor:pointer;
-            text-decoration:none;
-            transition:all 0.3s;
-        }
-        .nav-cta:hover { box-shadow:0 0 20px rgba(147,51,234,0.4); }
-        .hamburger {
-            display:flex;
-            flex-direction:column;
-            gap:0.3rem;
-            background:none;
-            border:none;
-            cursor:pointer;
-            color:white;
-        }
-        .hamburger span { width:1.5rem; height:2px; background:white; }
-        @media (min-width:768px) {
-            .nav-links { display:flex !important; }
-            .nav-cta { display:block !important; }
-            .hamburger { display:none; }
-        }
+    body{
+      font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
+      background:radial-gradient(circle at top,#f3e7ff 0,#e5e7f0 42%,#e0e3f0 100%);
+      color:var(--color-dark-900);
+      line-height:1.65;
+      overflow-x:hidden;
+      letter-spacing:0.3px;
+    }
 
-        /* Modal */
-        .modal-overlay {
-            position:fixed;
-            top:0; left:0;
-            width:100%; height:100%;
-            background:rgba(0,0,0,0.7);
-            display:none;
-            align-items:center;
-            justify-content:center;
-            z-index:100;
-            padding:1rem;
-        }
-        .modal-overlay.active { display:flex; }
-        .modal-content {
-            background:linear-gradient(180deg,rgba(15,23,42,0.98) 0%,rgba(3,7,18,0.99) 100%);
-            border:1px solid rgba(147,51,234,0.3);
-            border-radius:1rem;
-            padding:2rem;
-            width:100%;
-            max-width:500px;
-            max-height:90vh;
-            overflow-y:auto;
-            box-shadow:0 20px 60px rgba(147,51,234,0.3);
-            position:relative;
-        }
-        .modal-header { text-align:center; margin-bottom:2rem; }
-        .modal-header h2 { color:white; margin-bottom:0.5rem; font-size:1.5rem; }
-        .modal-header p { color:var(--color-dark-300); font-size:0.9rem; }
-        .close-modal {
-            position:absolute;
-            top:1.5rem;
-            right:1.5rem;
-            background:none;
-            border:none;
-            color:white;
-            font-size:2rem;
-            cursor:pointer;
-        }
-        .form-group { margin-bottom:1.5rem; }
-        .form-label {
-            display:block;
-            margin-bottom:0.5rem;
-            color:var(--color-neon-purple);
-            font-weight:600;
-            font-size:0.9rem;
-        }
-        .form-input,
-        .form-select {
-            width:100%;
-            padding:0.75rem;
-            background:rgba(15,23,42,0.8);
-            border:1px solid rgba(147,51,234,0.3);
-            color:white;
-            border-radius:0.5rem;
-            font-size:0.9rem;
-            transition:all 0.3s;
-        }
-        .form-input:focus,
-        .form-select:focus {
-            border-color:var(--color-neon-purple);
-            box-shadow:0 0 10px rgba(147,51,234,0.3);
-            outline:none;
-        }
-        .form-input::placeholder { color:rgba(211,213,219,0.5); }
-        .form-row {
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:1rem;
-        }
-        .submit-btn {
-            width:100%;
-            padding:1rem;
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            color:white;
-            border:none;
-            border-radius:0.5rem;
-            font-weight:600;
-            font-size:1rem;
-            cursor:pointer;
-            transition:all 0.3s;
-        }
-        .submit-btn:hover {
-            box-shadow:0 0 20px rgba(147,51,234,0.5);
-            transform:translateY(-2px);
-        }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(229,231,240,0.9);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(148,163,184,0.55);
+      transition:all 0.3s ease;
+      box-shadow:0 2px 20px rgba(15,23,42,0.18);
+    }
+    nav>div{
+      max-width:1280px;
+      margin:0 auto;
+      padding:0.9rem 1.5rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      text-decoration:none;
+      color:var(--color-dark-900);
+      font-weight:bold;
+      font-size:1.1rem;
+    }
+    .logo-icon{
+      width:2.3rem;
+      height:2.3rem;
+      border-radius:0.7rem;
+      background:linear-gradient(135deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#fdfdfd;
+      box-shadow:0 8px 18px rgba(129,53,136,0.45);
+    }
+    .nav-links{
+      display:none;
+      gap:2rem;
+      list-style:none;
+    }
+    .nav-links.active{display:flex;}
+    .nav-links a{
+      color:#4b5563;
+      text-decoration:none;
+      font-size:0.9rem;
+      font-weight:500;
+      position:relative;
+      transition:color 0.25s;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--color-neon-purple),var(--color-neon-orange));
+      border-radius:999px;
+      transition:width 0.2s ease;
+    }
+    .nav-links a:hover{
+      color:#111827;
+    }
+    .nav-links a:hover::after{
+      width:100%;
+    }
+    .nav-cta{
+      display:none;
+      padding:0.55rem 1.5rem;
+      background:#111827;
+      color:#f9fafb;
+      border:none;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:0.9rem;
+      box-shadow:0 10px 26px rgba(15,23,42,0.35);
+    }
+    .nav-cta:hover{
+      background:#020617;
+    }
+    .hamburger{
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+      background:none;
+      border:none;
+      cursor:pointer;
+      color:#111827;
+    }
+    .hamburger span{
+      width:1.5rem;
+      height:2px;
+      background:#111827;
+      border-radius:999px;
+    }
+    @media(min-width:768px){
+      .nav-links{display:flex !important;}
+      .nav-cta{display:block !important;}
+      .hamburger{display:none;}
+    }
+    @media(max-width:767px){
+      .nav-links{
+        position:fixed;
+        inset:3.2rem 1rem auto 1rem;
+        padding:0.9rem 1.1rem;
+        border-radius:0.9rem;
+        background:#e5e7f0;
+        border:1px solid rgba(148,163,184,0.75);
+        box-shadow:0 18px 40px rgba(15,23,42,0.25);
+        flex-direction:column;
+        display:none;
+      }
+      .nav-links li{padding:0.3rem 0;}
+    }
 
-        /* Hero */
-        .hero {
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            position:relative;
-            overflow:hidden;
-            padding:2rem 1rem;
-        }
-        .hero-background { position:absolute; inset:0; z-index:0; }
-        .hero-bg-gradient {
-            position:absolute; inset:0;
-            background:linear-gradient(135deg,rgba(129,53,136,0.08) 0%,transparent 50%,rgba(255,127,0,0.06) 100%);
-        }
-        .glow-1,.glow-2 {
-            position:absolute;
-            width:400px; height:400px;
-            border-radius:50%;
-            filter:blur(60px);
-            animation:float 8s ease-in-out infinite;
-        }
-        .glow-1 {
-            background:radial-gradient(circle,rgba(147,51,234,0.2) 0%,transparent 70%);
-            top:10%; left:10%;
-        }
-        .glow-2 {
-            background:radial-gradient(circle,rgba(234,88,12,0.15) 0%,transparent 70%);
-            bottom:10%; right:10%;
-            animation-delay:1s;
-        }
-        @keyframes float {
-            0%,100% { transform:translateY(0); opacity:0.6; }
-            50% { transform:translateY(-30px); opacity:1; }
-        }
-        .particle {
-            position:absolute;
-            width:2px; height:2px;
-            background:var(--color-neon-purple);
-            border-radius:50%;
-            opacity:0.3;
-        }
+    .modal-overlay{
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(15,23,42,0.5);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:100;
+      padding:1rem;
+    }
+    .modal-overlay.active{display:flex;}
+    .modal-content{
+      background:linear-gradient(180deg,#f0f2fb 0%,#dde2f6 100%);
+      border:1px solid rgba(148,163,184,0.8);
+      border-radius:1rem;
+      padding:2rem;
+      width:100%;
+      max-width:500px;
+      max-height:90vh;
+      overflow-y:auto;
+      box-shadow:0 20px 60px rgba(15,23,42,0.35);
+      position:relative;
+    }
+    .modal-header{text-align:center;margin-bottom:1.6rem;}
+    .modal-header h2{color:#020617;margin-bottom:0.4rem;font-size:1.4rem;}
+    .modal-header p{color:#4b5563;font-size:0.9rem;}
+    .close-modal{
+      position:absolute;
+      top:1.1rem;
+      right:1.2rem;
+      background:none;
+      border:none;
+      color:#111827;
+      font-size:1.7rem;
+      cursor:pointer;
+    }
+    .form-group{margin-bottom:1.1rem;}
+    .form-label{
+      display:block;
+      margin-bottom:0.4rem;
+      color:var(--color-neon-purple);
+      font-weight:600;
+      font-size:0.9rem;
+    }
+    .form-input,
+    .form-select{
+      width:100%;
+      padding:0.75rem;
+      background:#e2e5f2;
+      border:1px solid rgba(148,163,184,0.8);
+      color:#020617;
+      border-radius:0.55rem;
+      font-size:0.9rem;
+    }
+    .form-input:focus,
+    .form-select:focus{
+      border-color:var(--color-neon-purple);
+      outline:none;
+      box-shadow:0 0 0 1px rgba(129,53,136,0.35);
+    }
+    .form-input::placeholder{color:#9ca3af;}
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+    .submit-btn{
+      width:100%;
+      padding:0.9rem;
+      background:#111827;
+      color:#f9fafb;
+      border:none;
+      border-radius:0.7rem;
+      font-weight:600;
+      font-size:0.95rem;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(15,23,42,0.45);
+    }
+    .submit-btn:hover{background:#020617;}
 
-        .hero-content {
-            position:relative;
-            z-index:10;
-            max-width:900px;
-            margin:0 auto;
-            text-align:center;
-        }
-        h1 {
-            font-size:clamp(2.5rem,8vw,5rem);
-            font-weight:700;
-            line-height:1.15;
-            margin-bottom:1rem;
-            letter-spacing:-0.01em;
-        }
-        h1 .gradient {
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,white 50%,var(--color-neon-orange) 100%);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-            background-clip:text;
-        }
-        .hero-subtitle {
-            font-size:clamp(1rem,3vw,1.25rem);
-            color:var(--color-dark-300);
-            margin-bottom:2rem;
-            max-width:700px;
-            margin-left:auto;
-            margin-right:auto;
-            line-height:1.6;
-        }
-        .hero-ctas {
-            display:flex;
-            flex-direction:column;
-            gap:1rem;
-            margin-bottom:3rem;
-            justify-content:center;
-        }
-        @media (min-width:640px){ .hero-ctas{ flex-direction:row; } }
-        .btn {
-            padding:1rem 2rem;
-            border-radius:0.5rem;
-            font-weight:600;
-            font-size:1rem;
-            text-decoration:none;
-            cursor:pointer;
-            border:none;
-            transition:all 0.3s;
-            display:inline-block;
-        }
-        .btn-primary {
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            color:white;
-            box-shadow:0 8px 24px rgba(129,53,136,0.35);
-        }
-        .btn-primary:hover {
-            box-shadow:0 12px 32px rgba(129,53,136,0.45);
-            transform:translateY(-3px);
-        }
-        .btn-secondary {
-            border:2px solid var(--color-neon-purple);
-            color:var(--color-neon-purple);
-            background:transparent;
-        }
-        .btn-secondary:hover { background:rgba(147,51,234,0.1); }
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      padding:2.5rem 1rem 3.5rem;
+    }
+    .hero-background{
+      position:absolute;
+      inset:0;
+      z-index:0;
+    }
+    .hero-bg-gradient{
+      position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(129,53,136,0.12) 0,transparent 50%,rgba(255,127,0,0.09) 100%);
+    }
+    .glow-1,.glow-2{
+      position:absolute;
+      width:360px;height:360px;
+      border-radius:50%;
+      filter:blur(50px);
+      animation:float 8s ease-in-out infinite;
+    }
+    .glow-1{
+      background:radial-gradient(circle,rgba(129,53,136,0.2) 0%,transparent 70%);
+      top:8%;left:5%;
+    }
+    .glow-2{
+      background:radial-gradient(circle,rgba(255,127,0,0.18) 0%,transparent 70%);
+      bottom:8%;right:5%;
+      animation-delay:1s;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);opacity:0.6;}
+      50%{transform:translateY(-18px);opacity:1;}
+    }
+    .hero-orbit{
+      position:absolute;
+      width:520px;height:520px;
+      border-radius:50%;
+      border:1px solid rgba(129,53,136,0.35);
+      top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      animation:hero-orbit-spin 18s linear infinite;
+      pointer-events:none;
+    }
+    .hero-orbit::before{
+      content:"";
+      position:absolute;
+      width:22px;height:22px;
+      border-radius:50%;
+      background:radial-gradient(circle,var(--color-neon-orange) 0%,transparent 55%);
+      top:-11px;left:50%;
+      transform:translateX(-50%);
+      box-shadow:0 0 18px rgba(255,127,0,0.7);
+    }
+    @keyframes hero-orbit-spin{
+      from{transform:translate(-50%,-50%) rotate(0deg);}
+      to{transform:translate(-50%,-50%) rotate(360deg);}
+    }
 
-        /* Extra hero animations */
-        .hero-orbit {
-            position:absolute;
-            width:520px;
-            height:520px;
-            border-radius:50%;
-            border:1px solid rgba(129,53,136,0.35);
-            top:50%;
-            left:50%;
-            transform:translate(-50%,-50%);
-            animation:hero-orbit-spin 18s linear infinite;
-            pointer-events:none;
-        }
-        .hero-orbit::before {
-            content:"";
-            position:absolute;
-            width:24px;
-            height:24px;
-            border-radius:50%;
-            background:radial-gradient(circle,var(--color-neon-orange) 0%,transparent 60%);
-            top:-12px;
-            left:50%;
-            transform:translateX(-50%);
-            box-shadow:0 0 20px rgba(255,127,0,0.6);
-        }
-        @keyframes hero-orbit-spin {
-            from { transform:translate(-50%,-50%) rotate(0deg); }
-            to   { transform:translate(-50%,-50%) rotate(360deg); }
-        }
-        .hero-content h1 {
-            animation:hero-title-glow 3s ease-in-out infinite;
-        }
-        @keyframes hero-title-glow {
-            0%,100% { text-shadow:0 0 12px rgba(129,53,136,0.6); }
-            50%     { text-shadow:0 0 24px rgba(255,127,0,0.9); }
-        }
-        .hero-subtitle {
-            opacity:0;
-            transform:translateY(10px);
-            animation:hero-subtitle-up 0.8s ease-out 0.3s forwards;
-        }
-        .hero-ctas {
-            opacity:0;
-            transform:translateY(14px);
-            animation:hero-ctas-up 0.8s ease-out 0.5s forwards;
-        }
-        @keyframes hero-subtitle-up {
-            from { opacity:0; transform:translateY(10px); }
-            to   { opacity:1; transform:translateY(0); }
-        }
-        @keyframes hero-ctas-up {
-            from { opacity:0; transform:translateY(14px); }
-            to   { opacity:1; transform:translateY(0); }
-        }
+    .hero-content{
+      position:relative;
+      z-index:10;
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+    }
+    h1{
+      font-size:clamp(2.5rem,7vw,4rem);
+      font-weight:700;
+      line-height:1.12;
+      margin-bottom:1rem;
+      letter-spacing:-0.02em;
+    }
+    h1 .gradient{
+      background:linear-gradient(90deg,var(--color-neon-purple) 0%,#111827 50%,var(--color-neon-orange) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .hero-subtitle{
+      font-size:clamp(1rem,2.7vw,1.2rem);
+      color:var(--color-dark-300);
+      margin-bottom:2rem;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .hero-ctas{
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      margin-bottom:3rem;
+      justify-content:center;
+    }
+    @media(min-width:640px){
+      .hero-ctas{flex-direction:row;}
+    }
+    .btn{
+      padding:1rem 2rem;
+      border-radius:0.7rem;
+      font-weight:600;
+      font-size:0.96rem;
+      text-decoration:none;
+      cursor:pointer;
+      border:none;
+      transition:all 0.25s;
+      display:inline-block;
+    }
+    .btn-primary{
+      background:#111827;
+      color:#f9fafb;
+      box-shadow:0 10px 28px rgba(15,23,42,0.4);
+    }
+    .btn-primary:hover{
+      background:#020617;
+      transform:translateY(-2px);
+    }
+    .btn-secondary{
+      border:2px solid var(--color-neon-purple);
+      color:var(--color-neon-purple);
+      background:transparent;
+    }
+    .btn-secondary:hover{
+      background:rgba(129,53,136,0.12);
+    }
 
-        /* Chatbot */
-        .ai-bubble {
-            position:fixed;
-            bottom:2rem; right:2rem;
-            z-index:40;
-            animation:bubble-float 3s ease-in-out infinite;
-        }
-        @keyframes bubble-float {
-            0%,100% { transform:translateY(0); }
-            50% { transform:translateY(-10px); }
-        }
-        .ai-button {
-            width:56px; height:56px;
-            border-radius:50%;
-            background:linear-gradient(135deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            border:none;
-            color:white;
-            font-size:1.5rem;
-            cursor:pointer;
-            box-shadow:0 0 20px rgba(147,51,234,0.3);
-            transition:all 0.3s;
-        }
-        .ai-button:hover {
-            transform:scale(1.1);
-            box-shadow:0 0 30px rgba(147,51,234,0.6);
-        }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:1.8rem;
+      margin-top:2.4rem;
+      padding:2.3rem;
+      background:linear-gradient(135deg,#d7d9e7 0%,#cdd1e7 100%);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,0.7);
+      box-shadow:0 10px 30px rgba(148,163,184,0.35);
+    }
+    .stat{text-align:center;}
+    .stat-number{
+      font-size:2rem;
+      font-weight:700;
+      color:var(--color-gold);
+      margin-bottom:0.4rem;
+    }
+    .stat-label{
+      font-size:0.85rem;
+      color:var(--color-dark-300);
+    }
 
-        .chatbot-window {
-            position:fixed;
-            bottom:120px;
-            right:2rem;
-            width:380px;
-            height:500px;
-            background:linear-gradient(180deg,rgba(15,23,42,0.95) 0%,rgba(3,7,18,0.98) 100%);
-            border:1px solid rgba(147,51,234,0.3);
-            border-radius:1rem;
-            z-index:41;
-            display:none;
-            flex-direction:column;
-            box-shadow:0 10px 40px rgba(147,51,234,0.2);
-        }
-        .chatbot-window.active { display:flex; }
-        .chatbot-header {
-            padding:1.5rem;
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            border-radius:1rem 1rem 0 0;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-        .chatbot-header h3 { color:white; font-size:1rem; margin:0; }
-        .chatbot-close {
-            background:none;
-            border:none;
-            color:white;
-            font-size:1.5rem;
-            cursor:pointer;
-            padding:0;
-        }
-        .chatbot-messages {
-            flex:1;
-            overflow-y:auto;
-            padding:1.5rem;
-            display:flex;
-            flex-direction:column;
-            gap:1rem;
-        }
-        .message { display:flex; gap:0.75rem; margin-bottom:0.5rem; }
-        .message.user { justify-content:flex-end; }
-        .message-content {
-            max-width:80%;
-            padding:0.75rem 1rem;
-            border-radius:0.75rem;
-            font-size:0.9rem;
-            line-height:1.4;
-        }
-        .message.bot .message-content {
-            background:rgba(147,51,234,0.2);
-            color:var(--color-dark-200);
-            border:1px solid rgba(147,51,234,0.3);
-        }
-        .message.user .message-content {
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            color:white;
-        }
-        .chatbot-input-area {
-            padding:1rem;
-            border-top:1px solid rgba(147,51,234,0.2);
-            display:flex;
-            gap:0.5rem;
-        }
-        .chatbot-input {
-            flex:1;
-            background:rgba(15,23,42,0.8);
-            border:1px solid rgba(147,51,234,0.3);
-            color:white;
-            padding:0.75rem;
-            border-radius:0.5rem;
-            font-size:0.9rem;
-            outline:none;
-        }
-        .chatbot-input:focus {
-            border-color:var(--color-neon-purple);
-            box-shadow:0 0 10px rgba(147,51,234,0.3);
-        }
-        .chatbot-send {
-            background:linear-gradient(90deg,var(--color-neon-purple) 0%,var(--color-neon-orange) 100%);
-            border:none;
-            color:white;
-            padding:0.75rem 1rem;
-            border-radius:0.5rem;
-            cursor:pointer;
-            font-weight:600;
-            transition:all 0.3s;
-        }
-        .chatbot-send:hover { box-shadow:0 0 15px rgba(147,51,234,0.4); }
-        .quick-replies {
-            display:grid;
-            grid-template-columns:1fr;
-            gap:0.5rem;
-            padding:0 1rem 1rem;
-        }
-        .quick-reply {
-            background:rgba(147,51,234,0.15);
-            border:1px solid rgba(147,51,234,0.3);
-            color:var(--color-neon-purple);
-            padding:0.75rem;
-            border-radius:0.5rem;
-            cursor:pointer;
-            font-size:0.85rem;
-            transition:all 0.2s;
-        }
-        .quick-reply:hover {
-            background:rgba(147,51,234,0.25);
-            border-color:var(--color-neon-purple);
-        }
+    section{padding:5rem 1rem;}
+    .container{max-width:1280px;margin:0 auto;}
+    .section-header{text-align:center;margin-bottom:3rem;}
+    .section-header h2{
+      font-size:clamp(2rem,4.5vw,3rem);
+      margin-bottom:1rem;
+      font-weight:700;
+      letter-spacing:-0.03em;
+    }
+    .section-header p{
+      font-size:1.05rem;
+      color:var(--color-dark-300);
+      max-width:600px;
+      margin:0 auto;
+    }
 
-        /* Stats */
-        .stats {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-            gap:2rem;
-            margin-top:3rem;
-            padding:2.5rem;
-            background:linear-gradient(135deg,rgba(20,24,41,0.7) 0%,rgba(20,28,45,0.5) 100%);
-            border-radius:1rem;
-            border:1px solid rgba(212,175,55,0.12);
-            box-shadow:0 8px 32px rgba(0,0,0,0.2);
-        }
-        .stat { text-align:center; }
-        .stat-number {
-            font-size:2.25rem;
-            font-weight:700;
-            color:var(--color-gold);
-            margin-bottom:0.5rem;
-        }
-        .stat-label { font-size:0.875rem; color:var(--color-dark-300); }
+    .bg-panel{
+      background:linear-gradient(180deg,#d9dce9 0%,#cfd3e7 100%);
+      border-top:1px solid rgba(148,163,184,0.7);
+      border-bottom:1px solid rgba(148,163,184,0.7);
+    }
 
-        /* Sections */
-        section { padding:5rem 1rem; }
-        .container { max-width:1280px; margin:0 auto; }
-        .section-header { text-align:center; margin-bottom:3rem; }
-        .section-header h2 {
-            font-size:clamp(2rem,5vw,3rem);
-            margin-bottom:1rem;
-            font-weight:700;
-            letter-spacing:-0.5px;
-        }
-        .section-header p {
-            font-size:1.125rem;
-            color:var(--color-dark-300);
-            max-width:600px;
-            margin:0 auto;
-        }
+    .captains-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      margin-bottom:3rem;
+    }
+    .card,
+    .benefit-item,
+    .training-card{
+      padding:2rem;
+      border-radius:1rem;
+      background:linear-gradient(135deg,#d0d4ea 0%,#c4cae5 100%);
+      border:1px solid rgba(148,163,184,0.9);
+      transition:all 0.25s;
+    }
+    .card:hover,
+    .benefit-item:hover,
+    .training-card:hover{
+      border-color:rgba(129,53,136,0.7);
+      box-shadow:0 14px 32px rgba(148,163,184,0.75);
+      transform:translateY(-4px);
+    }
+    .card h3,
+    .training-card h3{
+      font-size:1.35rem;
+      margin-bottom:0.9rem;
+    }
+    .card-section{margin-bottom:1.2rem;}
+    .card-label{
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      color:var(--color-neon-orange);
+      font-weight:600;
+      margin-bottom:0.4rem;
+    }
+    .card-text{
+      color:var(--color-dark-300);
+      font-size:0.92rem;
+    }
+    .card-outcome{
+      font-size:1.2rem;
+      font-weight:700;
+      color:#111827;
+    }
+    .badge{
+      display:inline-block;
+      padding:0.25rem 0.75rem;
+      background:#c6cae5;
+      color:var(--color-neon-purple);
+      border-radius:9999px;
+      font-size:0.75rem;
+      font-weight:600;
+      margin-right:0.5rem;
+      margin-bottom:0.4rem;
+    }
 
-        /* Captains */
-        .captains-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:2rem;
-            margin-bottom:3rem;
-        }
-        .card {
-            padding:2rem;
-            border-radius:1rem;
-            background:linear-gradient(135deg,rgba(20,24,41,0.8) 0%,rgba(20,28,45,0.6) 100%);
-            border:1px solid rgba(212,175,55,0.1);
-            transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-            cursor:pointer;
-        }
-        .card:hover {
-            border-color:rgba(212,175,55,0.3);
-            box-shadow:0 16px 40px rgba(129,53,136,0.15);
-            transform:translateY(-6px);
-        }
-        .card h3 { font-size:1.5rem; margin-bottom:1rem; }
-        .card-section { margin-bottom:1.5rem; }
-        .card-label {
-            font-size:0.75rem;
-            text-transform:uppercase;
-            letter-spacing:0.1em;
-            color:var(--color-neon-orange);
-            font-weight:600;
-            margin-bottom:0.5rem;
-        }
-        .card-text { color:var(--color-dark-300); }
-        .card-outcome {
-            font-size:1.25rem;
-            font-weight:bold;
-            color:white;
-        }
-        .badge {
-            display:inline-block;
-            padding:0.25rem 0.75rem;
-            background:rgba(147,51,234,0.2);
-            color:var(--color-neon-purple);
-            border-radius:9999px;
-            font-size:0.75rem;
-            font-weight:600;
-            margin-right:0.5rem;
-            margin-bottom:0.5rem;
-        }
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+    }
+    .benefit-item p{
+      color:var(--color-dark-300);
+      font-size:0.93rem;
+    }
+    .benefit-item h4{
+      color:var(--color-neon-purple);
+      margin-bottom:0.8rem;
+      font-size:1.02rem;
+    }
 
-        .bg-dark {
-            background:linear-gradient(180deg,rgba(14,18,32,0.6) 0%,rgba(10,13,24,0.8) 100%);
-            border-top:1px solid rgba(212,175,55,0.1);
-            border-bottom:1px solid rgba(212,175,55,0.1);
-        }
+    .training-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      margin-bottom:3rem;
+    }
+    .training-card{overflow:hidden;}
+    .training-image{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      display:block;
+      border-radius:1rem 1rem 0 0;
+      margin:-2rem -2rem 1.2rem -2rem;
+    }
+    .training-duration{
+      margin:0 0 0.6rem;
+      font-size:0.86rem;
+      color:var(--color-neon-orange);
+      font-weight:600;
+    }
+    .training-content{
+      color:var(--color-dark-300);
+      font-size:0.9rem;
+    }
+    .training-content ul{
+      list-style:none;
+      margin:0.8rem 0 0;
+      padding-left:0;
+    }
+    .training-content li{
+      padding:0.4rem 0;
+    }
+    .training-content li::before{
+      content:"– ";
+      color:var(--color-neon-purple);
+      font-weight:700;
+    }
 
-        /* Benefits */
-        .benefits-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:2rem;
-        }
-        .benefit-item {
-            padding:2rem;
-            border-radius:1rem;
-            background:linear-gradient(135deg,rgba(20,24,41,0.7) 0%,rgba(20,28,45,0.5) 100%);
-            border:1px solid rgba(212,175,55,0.1);
-        }
-        .icon-box {
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            width:32px; height:32px;
-            border-radius:6px;
-            background:rgba(129,53,136,0.2);
-            color:var(--color-neon-purple);
-            font-weight:700;
-            font-size:1.2rem;
-            margin-right:0.5rem;
-            flex-shrink:0;
-        }
-        .benefit-item h4 {
-            display:flex;
-            align-items:center;
-            color:var(--color-neon-purple);
-            margin-bottom:1rem;
-            font-size:1.1rem;
-        }
-        .benefit-item p {
-            color:var(--color-dark-300);
-            font-size:0.95rem;
-            line-height:1.6;
-        }
+    .ai-bubble{
+      position:fixed;
+      bottom:2rem;right:2rem;
+      z-index:40;
+      animation:bubble-float 3s ease-in-out infinite;
+    }
+    @keyframes bubble-float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-8px);}
+    }
+    .ai-button{
+      width:56px;height:56px;
+      border-radius:50%;
+      background:#111827;
+      border:none;
+      color:#f9fafb;
+      font-size:1.4rem;
+      cursor:pointer;
+      box-shadow:0 0 22px rgba(15,23,42,0.7);
+      transition:all 0.3s;
+    }
+    .ai-button:hover{
+      transform:scale(1.07);
+    }
 
-        /* Training */
-        .training-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:2rem;
-            margin-bottom:3rem;
-        }
-        .training-card {
-            border-radius:1rem;
-            background:linear-gradient(135deg,rgba(20,24,41,0.8) 0%,rgba(20,28,45,0.6) 100%);
-            border:1px solid rgba(212,175,55,0.1);
-            overflow:hidden;
-            transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-        }
-        .training-card:hover {
-            border-color:rgba(212,175,55,0.3);
-            box-shadow:0 16px 40px rgba(129,53,136,0.15);
-            transform:translateY(-6px);
-        }
-        .training-image {
-            width:100%;
-            height:200px;
-            object-fit:cover;
-            display:block;
-        }
-        .training-card h3 {
-            font-size:1.5rem;
-            margin:1.5rem 1.5rem 0.5rem;
-            color:white;
-        }
-        .training-duration {
-            margin:0 1.5rem;
-            font-size:0.9rem;
-            color:var(--color-neon-orange);
-            font-weight:600;
-        }
-        .training-content {
-            padding:1rem 1.5rem;
-            color:var(--color-dark-300);
-        }
-        .training-content p { margin:0; font-size:0.95rem; }
-        .training-content ul {
-            list-style:none;
-            margin:0;
-            padding-left:1.5rem;
-        }
-        .training-content li {
-            padding:0.5rem 0;
-            font-size:0.9rem;
-        }
-        .training-content li:before {
-            content:"✓ ";
-            color:var(--color-neon-purple);
-            font-weight:bold;
-            margin-right:0.5rem;
-        }
+    .chatbot-window{
+      position:fixed;
+      bottom:120px;
+      right:2rem;
+      width:360px;
+      height:480px;
+      background:#e3e5f3;
+      border:1px solid rgba(148,163,184,0.9);
+      border-radius:1rem;
+      z-index:41;
+      display:none;
+      flex-direction:column;
+      box-shadow:0 16px 40px rgba(15,23,42,0.4);
+    }
+    .chatbot-window.active{display:flex;}
+    .chatbot-header{
+      padding:1.1rem 1.3rem;
+      background:linear-gradient(90deg,var(--color-neon-purple),var(--color-neon-orange));
+      border-radius:1rem 1rem 0 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:#f9fafb;
+    }
+    .chatbot-header h3{font-size:0.96rem;margin:0;}
+    .chatbot-close{
+      background:none;
+      border:none;
+      color:#f9fafb;
+      font-size:1.4rem;
+      cursor:pointer;
+      padding:0;
+    }
+    .chatbot-messages{
+      flex:1;
+      overflow-y:auto;
+      padding:1.2rem;
+      display:flex;
+      flex-direction:column;
+      gap:0.7rem;
+    }
+    .message{display:flex;gap:0.7rem;margin-bottom:0.2rem;}
+    .message.user{justify-content:flex-end;}
+    .message-content{
+      max-width:80%;
+      padding:0.7rem 1rem;
+      border-radius:0.7rem;
+      font-size:0.9rem;
+    }
+    .message.bot .message-content{
+      background:#d6daf0;
+      color:#020617;
+      border:1px solid rgba(148,163,184,0.9);
+    }
+    .message.user .message-content{
+      background:#111827;
+      color:#f9fafb;
+    }
+    .chatbot-input-area{
+      padding:0.9rem 1rem;
+      border-top:1px solid rgba(148,163,184,0.9);
+      display:flex;
+      gap:0.5rem;
+    }
+    .chatbot-input{
+      flex:1;
+      background:#e2e4f2;
+      border:1px solid rgba(148,163,184,0.9);
+      color:#020617;
+      padding:0.7rem 0.9rem;
+      border-radius:0.5rem;
+      font-size:0.9rem;
+      outline:none;
+    }
+    .chatbot-send{
+      background:#111827;
+      border:none;
+      color:#f9fafb;
+      padding:0.7rem 1rem;
+      border-radius:0.5rem;
+      cursor:pointer;
+      font-weight:600;
+      font-size:0.85rem;
+    }
+    .quick-replies{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:0.5rem;
+      padding:0 1rem 0.8rem;
+    }
+    .quick-reply{
+      background:#d9ddef;
+      border:1px solid rgba(148,163,184,0.9);
+      color:#111827;
+      padding:0.7rem 0.8rem;
+      border-radius:0.5rem;
+      cursor:pointer;
+      font-size:0.82rem;
+    }
 
-        /* Footer */
-        footer {
-            background:linear-gradient(180deg,rgba(10,14,26,0.95) 0%,rgba(7,10,18,0.98) 100%);
-            border-top:1px solid rgba(212,175,55,0.15);
-            padding:4rem 1rem 3rem;
-            text-align:center;
-            color:var(--color-dark-300);
-        }
-        footer a {
-            color:var(--color-neon-purple);
-            text-decoration:none;
-            transition:color 0.3s;
-        }
-        footer a:hover { color:var(--color-neon-orange); }
+    footer{
+      background:#d5d8e7;
+      border-top:1px solid rgba(148,163,184,0.9);
+      padding:3.5rem 1rem 2.5rem;
+      text-align:center;
+      color:var(--color-dark-300);
+    }
+    footer a{
+      color:var(--color-neon-purple);
+      text-decoration:none;
+    }
+    footer a:hover{color:var(--color-neon-orange);}
 
-        @media (max-width:640px){
-            h1 { font-size:2rem; }
-            section { padding:3rem 1rem; }
-            .stats { grid-template-columns:repeat(2,1fr); gap:1rem; }
-            .chatbot-window { width:calc(100% - 2rem); height:400px; right:1rem; bottom:100px; }
-            .form-row { grid-template-columns:1fr; }
-        }
+    @media(max-width:640px){
+      h1{font-size:2.2rem;}
+      section{padding:3.5rem 1rem;}
+      .stats{grid-template-columns:repeat(2,1fr);gap:1rem;}
+      .chatbot-window{
+        width:calc(100% - 2rem);
+        right:1rem;
+        bottom:100px;
+        height:400px;
+      }
+      .form-row{grid-template-columns:1fr;}
+    }
 
-        :focus-visible {
-            outline:2px solid var(--color-neon-purple);
-            outline-offset:2px;
-        }
-
-        /* Fractional animations */
-        @keyframes slideInLeft { from{opacity:0;transform:translateX(-50px);} to{opacity:1;transform:translateX(0);} }
-        @keyframes slideInRight{ from{opacity:0;transform:translateX(50px);}  to{opacity:1;transform:translateX(0);} }
-        @keyframes fadeInUp   { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-        @keyframes pulse {
-            0%,100% { transform:scale(1); box-shadow:0 0 40px rgba(129,53,136,0.6); }
-            50%     { transform:scale(1.08); box-shadow:0 0 60px rgba(129,53,136,0.9); }
-        }
-        @media (max-width:1024px){
-            section#fractional .fractional-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            section#fractional { padding:4rem 1rem !important; }
-        }
-    </style>
+    :focus-visible{
+      outline:2px solid var(--color-neon-purple);
+      outline-offset:2px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="nav">
-        <div>
-            <a href="#" class="logo">
-                <div class="logo-icon">GC</div>
-                <span>GrowCaptain</span>
-            </a>
-            <button class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#captains">Captains</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#fractional">Fractional</a></li>
-                <li><a href="#training">Sales Training</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>
-            <button class="nav-cta" onclick="openModal('Consultation')">Chat with AI</button>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="hero-bg-gradient"></div>
-            <div class="glow-1"></div>
-            <div class="glow-2"></div>
-        </div>
-        <div class="hero-orbit"></div>
-        <div class="hero-content">
-            <h1>
-                <span class="gradient">We Navigate.</span><br>
-                You Scale.
-            </h1>
-            <p class="hero-subtitle">
-                GrowCaptain builds your growth engine — Sales, Ops, Brand, Finance & AI — with execution-ready systems. Stop struggling. Start scaling.
-            </p>
-            <div class="hero-ctas">
-                <button class="btn btn-primary" onclick="openModal('Growth System')">Start Fixing Growth</button>
-                <button class="btn btn-secondary" onclick="openModal('Free Audit')">Book Free Audit</button>
-            </div>
-            <div class="stats">
-                <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Founders Guided</div></div>
-                <div class="stat"><div class="stat-number">45%</div><div class="stat-label">Avg Revenue Growth</div></div>
-                <div class="stat"><div class="stat-number">3.5mo</div><div class="stat-label">Avg Time to Execute</div></div>
-                <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Retention Rate</div></div>
-                <div class="stat"><div class="stat-number">₹2.5Cr+</div><div class="stat-label">Revenue Generated</div></div>
-                <div class="stat"><div class="stat-number">6</div><div class="stat-label">Growth Captains</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problems -->
-    <section class="bg-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2>Are You Facing These <span style="color:var(--color-neon-orange);">Growth Blockers?</span></h2>
-                <p>Most startups and SMEs struggle with the same execution gaps. You're not alone.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h4><span class="icon-box">↗</span> Sales Chaos</h4>
-                    <p>No predictable lead flow. Inconsistent conversion. Relies on founder hustle. Can't scale without you.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">⚙</span> Operational Mess</h4>
-                    <p>Everything manual. No systems. Team works without playbooks. Growing pains at every stage.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">◆</span> Brand Invisibility</h4>
-                    <p>Message unclear. Gets lost in market. Can't communicate unique value. Competing on price.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">$</span> Financial Blindness</h4>
-                    <p>Don't understand unit economics. Cash burns unpredictably. Runway anxiety. No data-driven decisions.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">▲</span> Growth Plateau</h4>
-                    <p>Hit a ceiling. Can't get beyond founder-led execution. Team bottlenecks everywhere.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">∞</span> Automation Gap</h4>
-                    <p>Manual work everywhere. Competitors 10x faster. Missing AI opportunities. No integration.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">📉</span> Lead Quality Issues</h4>
-                    <p>Plenty of enquiries but very few ideal customers. Sales team wastes time on unfit leads and conversion stays flat.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4><span class="icon-box">🧱</span> Founder Bottleneck</h4>
-                    <p>Every key decision, deal, and fire-fighting depends on you. Growth stalls the moment you step back from day-to-day.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Captains -->
-    <section class="bg-dark" id="captains">
-        <div class="container">
-            <div class="section-header">
-                <h2>Meet Your Growth <span style="color:var(--color-neon-purple);">Captains</span></h2>
-                <p>Five specialized systems that fix the core pillars of business growth.</p>
-            </div>
-            <div class="captains-grid">
-                <div class="card">
-                    <h3>💰 Sales Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">Leads aren't converting. Manual unpredictable process.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Build conversion systems, funnels, closing sequences.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">+13% conversion</div>
-                    </div>
-                    <div><span class="badge">13% Lift</span><span class="badge">4x Quality</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Sales Captain')">Deploy Captain</button>
-                </div>
-                <div class="card">
-                    <h3>⚙️ Ops Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">Chaotic operations. No playbooks. No scale.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Design SOPs, workflows, accountability systems.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">8hrs/week saved</div>
-                    </div>
-                    <div><span class="badge">90% Auto</span><span class="badge">Scalable</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Ops Captain')">Deploy Captain</button>
-                </div>
-                <div class="card">
-                    <h3>🎨 Brand Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">Message unclear. Invisible in market.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Clarify positioning, messaging, identity narrative.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">4x engagement</div>
-                    </div>
-                    <div><span class="badge">Clarity</span><span class="badge">Authority</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Brand Captain')">Deploy Captain</button>
-                </div>
-                <div class="card">
-                    <h3>💵 Finance Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">Don't understand unit economics. Cash bleeding.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Build models, dashboards, cash flow strategies.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">Runway +12mo</div>
-                    </div>
-                    <div><span class="badge">Economics Clear</span><span class="badge">Profitable</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Finance Captain')">Deploy Captain</button>
-                </div>
-                <div class="card">
-                    <h3>🤖 AI Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">Missing automation. Competitors 10x faster.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Implement AI workflows, CRM automation, intelligence.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">70% automation</div>
-                    </div>
-                    <div><span class="badge">Autonomous</span><span class="badge">24/7</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('AI Captain')">Deploy Captain</button>
-                </div>
-                <div class="card">
-                    <h3>👥 HR Captain</h3>
-                    <div class="card-section">
-                        <div class="card-label">Problem</div>
-                        <div class="card-text">High turnover. No culture. Team conflicts. No growth path.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Solution</div>
-                        <div class="card-text">Build culture, hiring systems, retention playbooks.</div>
-                    </div>
-                    <div class="card-section">
-                        <div class="card-label">Outcome</div>
-                        <div class="card-outcome">80% retention</div>
-                    </div>
-                    <div><span class="badge">Strong Culture</span><span class="badge">Engaged Team</span></div>
-                    <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('HR Captain')">Deploy Captain</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Services Built for <span style="color:var(--color-neon-orange);">Execution</span></h2>
-                <p>Not workshops. Not reports. Real systems that fix real problems. Fast.</p>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
-                <div class="card">
-                    <h3 style="color:var(--color-neon-purple);margin-bottom:1.5rem;">▼ FUNNELS</h3>
-                    <div class="card-section"><div class="card-label">Landing Pages</div><div class="card-text">5% → +35-50% conversion</div></div>
-                    <div class="card-section"><div class="card-label">Sales Funnel</div><div class="card-text">3x qualified leads</div></div>
-                    <div class="card-section"><div class="card-label">Email Sequences</div><div class="card-text">40% open rate automation</div></div>
-                </div>
-                <div class="card">
-                    <h3 style="color:var(--color-neon-orange);margin-bottom:1.5rem;">→ GROWTH</h3>
-                    <div class="card-section"><div class="card-label">Experiments</div><div class="card-text">2-3 scalable wins per sprint</div></div>
-                    <div class="card-section"><div class="card-label">Scaling Systems</div><div class="card-text">Higher output per rep</div></div>
-                    <div class="card-section"><div class="card-label">CAC Optimization</div><div class="card-text">Lower acquisition cost</div></div>
-                </div>
-                <div class="card">
-                    <h3 style="color:#f472b6;margin-bottom:1.5rem;">◇ BRAND</h3>
-                    <div class="card-section"><div class="card-label">Positioning</div><div class="card-text">Clear market narrative</div></div>
-                    <div class="card-section"><div class="card-label">Identity</div><div class="card-text">Premium visual system</div></div>
-                    <div class="card-section"><div class="card-label">Content</div><div class="card-text">Demand + authority</div></div>
-                </div>
-                <div class="card">
-                    <h3 style="color:#4ade80;margin-bottom:1.5rem;">⚡ AUTOMATION</h3>
-                    <div class="card-section"><div class="card-label">CRM & Workflows</div><div class="card-text">Real-time visibility</div></div>
-                    <div class="card-section"><div class="card-label">WhatsApp</div><div class="card-text">Always-on engagement</div></div>
-                    <div class="card-section"><div class="card-label">Integrations</div><div class="card-text">Less manual work</div></div>
-                </div>
-                <div class="card">
-                    <h3 style="color:#818cf8;margin-bottom:1.5rem;">□ TEMPLATES</h3>
-                    <div class="card-section"><div class="card-label">SOP Library</div><div class="card-text">Core operations</div></div>
-                    <div class="card-section"><div class="card-label">Sales Scripts</div><div class="card-text">Higher win rates</div></div>
-                    <div class="card-section"><div class="card-label">Dashboards</div><div class="card-text">Key metrics live</div></div>
-                </div>
-                <div class="card">
-                    <h3 style="color:#ec4899;margin-bottom:1.5rem;">▲ CULTURE</h3>
-                    <div class="card-section"><div class="card-label">Hiring Systems</div><div class="card-text">Better fits faster</div></div>
-                    <div class="card-section"><div class="card-label">Retention</div><div class="card-text">Sticky teams</div></div>
-                    <div class="card-section"><div class="card-label">Playbooks</div><div class="card-text">Culture in action</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fractional Growth Partner -->
-    <section id="fractional" style="background:linear-gradient(135deg,rgba(129,53,136,0.1) 0%,rgba(255,127,0,0.05) 100%);padding:6rem 1rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;z-index:0;">
-            <div style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(147,51,234,0.18) 0%,transparent 70%);border-radius:50%;top:5%;left:5%;filter:blur(60px);animation:float 7s ease-in-out infinite;"></div>
-            <div style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(234,88,12,0.12) 0%,transparent 70%);border-radius:50%;bottom:5%;right:5%;filter:blur(60px);animation:float 7s ease-in-out infinite 2s;"></div>
-        </div>
-        <div class="container" style="position:relative;z-index:1;">
-            <div class="section-header" style="margin-bottom:3rem;">
-                <h2>Fractional <span style="color:var(--color-neon-purple);">Growth Partner</span></h2>
-                <p>Executive-level growth leadership (10–20 hours/week) without a full-time CXO cost.</p>
-            </div>
-            <div class="fractional-grid" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:3rem;align-items:center;">
-                <div style="animation:slideInLeft 0.8s ease-out;">
-                    <div style="margin-bottom:2rem;">
-                        <span class="badge" style="background:rgba(15,23,42,0.9);border:1px solid rgba(212,175,55,0.4);color:var(--color-gold);">Fractional CGO / CMO</span>
-                        <p style="margin-top:1rem;color:var(--color-dark-300);font-size:0.95rem;">
-                            Ideal for funded startups and SMEs that have revenue and a team but lack senior growth leadership.
-                        </p>
-                    </div>
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
-                        <div class="benefit-item" style="background:rgba(15,23,42,0.9);border-color:rgba(147,51,234,0.35);">
-                            <h4><span class="icon-box">🎯</span>What You Get</h4>
-                            <p>Revenue roadmap, channel strategy, and experiment design led by a fractional growth head.</p>
-                        </div>
-                        <div class="benefit-item" style="background:rgba(15,23,42,0.9);border-color:rgba(212,175,55,0.35);">
-                            <h4><span class="icon-box">⚙</span>How It Works</h4>
-                            <p>Weekly leadership calls, sprint planning, dashboards, and embedded collaboration.</p>
-                        </div>
-                        <div class="benefit-item" style="background:rgba(15,23,42,0.9);border-color:rgba(76,175,80,0.35);">
-                            <h4><span class="icon-box">💡</span>Why Fractional</h4>
-                            <p>C-suite expertise at a fraction of cost, with the flexibility to scale up or down.</p>
-                        </div>
-                    </div>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem;">
-                        <span class="badge">Revenue Strategy</span>
-                        <span class="badge">Channel Prioritisation</span>
-                        <span class="badge">Experiment Design</span>
-                        <span class="badge">Team Coaching</span>
-                        <span class="badge">Investor Metrics</span>
-                    </div>
-                    <button class="btn btn-primary" style="margin-top:2rem;padding:1.1rem 2.5rem;" onclick="openModal('Fractional Growth Partner')">
-                        Book Fractional Growth Call
-                    </button>
-                </div>
-                <div style="position:relative;animation:slideInRight 0.8s ease-out;">
-                    <div style="position:relative;border-radius:1.5rem;overflow:hidden;border:1px solid rgba(147,51,234,0.4);box-shadow:0 22px 60px rgba(0,0,0,0.5);">
-                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=900&h=600&fit=crop"
-                             alt="Fractional growth leader with startup team"
-                             style="width:100%;height:100%;max-height:360px;object-fit:cover;display:block;">
-                        <div style="position:absolute;inset:0;background:radial-gradient(circle at top left,rgba(0,0,0,0.3),transparent 55%),linear-gradient(to top,rgba(3,7,18,0.85),transparent 55%);"></div>
-                        <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
-                            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;">
-                                <div>
-                                    <p style="font-size:0.8rem;color:var(--color-dark-300);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.35rem;">Fractional Growth Deck</p>
-                                    <p style="font-size:1.1rem;font-weight:600;">45% Avg Revenue Lift · 3–6 Month Engagements</p>
-                                </div>
-                                <div style="display:flex;gap:0.75rem;">
-                                    <div style="background:rgba(15,23,42,0.9);padding:0.5rem 0.9rem;border-radius:999px;border:1px solid rgba(212,175,55,0.5);font-size:0.8rem;">⏱ 10–20 hrs/week</div>
-                                    <div style="background:rgba(15,23,42,0.9);padding:0.5rem 0.9rem;border-radius:999px;border:1px solid rgba(147,51,234,0.5);font-size:0.8rem;">💼 Founder-Led Teams</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="position:absolute;top:-12px;right:-12px;background:rgba(15,23,42,0.95);border-radius:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(212,175,55,0.7);box-shadow:0 14px 40px rgba(0,0,0,0.6);animation:pulse 3s infinite;">
-                        <div style="font-size:0.75rem;color:var(--color-dark-300);text-transform:uppercase;letter-spacing:0.12em;">Typical Outcome</div>
-                        <div style="margin-top:0.3rem;font-size:1.3rem;font-weight:700;color:var(--color-gold);">3x</div>
-                        <div style="font-size:0.8rem;color:var(--color-dark-300);">Pipeline in 90 days</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sales Training (directly below Fractional) -->
-    <section id="training">
-        <div class="container">
-            <div class="section-header">
-                <h2>Sales <span style="color:var(--color-neon-purple);">Training Programs</span></h2>
-                <p>Intensive sales bootcamps designed to transform your team into a predictable, high-performing revenue engine.</p>
-            </div>
-            <div class="training-grid">
-                <div class="training-card">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1765687489/search_images/4c2f166b795fb09cf15bb0735ab360a74e41ab37.jpg" alt="Sales Audit Training" class="training-image">
-                    <h3>🔍 Sales Audit Training</h3>
-                    <p class="training-duration">3–4 hours diagnostic</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Diagnosing your sales funnel, call flow, and lead handling gaps so you know exactly what to fix first.</p>
-                        <ul>
-                            <li>Learn a structured sales audit framework</li>
-                            <li>Identify leak points across pipeline stages</li>
-                            <li>Create a focused sales fix roadmap</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('Sales Audit Training')">Enroll Now</button>
-                </div>
-                <div class="training-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Day Sales Workshop" class="training-image">
-                    <h3>⚡ 1-Day Sales Workshop</h3>
-                    <p class="training-duration">8 hours intensive</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Fast wins, sharper objections, and aligned scripts for your entire sales team.</p>
-                        <ul>
-                            <li>Pipeline & ICP clarity</li>
-                            <li>Script, objection handling, and roleplays</li>
-                            <li>30-day outbound action plan</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('1-Day Sales Workshop')">Enroll Now</button>
-                </div>
-                <div class="training-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Month Sales Program" class="training-image">
-                    <h3>🎯 1-Month Sales Program</h3>
-                    <p class="training-duration">20+ sessions</p>
-                    <div class="training-content">
-                        <p><strong>Perfect for:</strong> Building a complete prospecting-to-close system and upgrading your sales managers.</p>
-                        <ul>
-                            <li>4x weekly coaching and call reviews</li>
-                            <li>Discovery, demo, and closing frameworks</li>
-                            <li>Manager systems to sustain performance</li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('1-Month Sales Program')">Enroll Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketing Insights -->
-    <section class="bg-dark" id="insights">
-        <div class="container">
-            <div class="section-header">
-                <h2>Growth <span style="color:var(--color-neon-orange);">Insights & Trends</span></h2>
-                <p>Latest marketing strategies, growth hacks, and industry insights to accelerate your business.</p>
-            </div>
-
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-bottom:3rem;">
-                <div class="card">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1764098792/search_images/c382feec67995a7355bdcaa7f8af9ad1fb2dab7b.jpg" alt="AI Marketing Trends" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
-                    <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">AI-Powered Marketing in 2025</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Automation, personalization at scale, and predictive analytics are reshaping customer engagement.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">AI</span><span class="badge">Automation</span><span class="badge">2025</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1765687607/search_images/90498d8435b259c659dbea9a2b76b69bae470dcb.jpg" alt="Customer Data Analytics" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
-                    <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">First-Party Data Strategy</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">With third-party cookies fading out, brands must build direct customer relationships.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">Data</span><span class="badge">Privacy</span><span class="badge">CRM</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1763914552/search_images/b95396f9bd2d1d780e9ff362d9844e14c15ec72e.jpg" alt="Content Marketing ROI" style="width:100%;height:180px;object-fit:cover;border-radius:0.75rem 0.75rem 0 0;margin:-2rem -2rem 1rem -2rem;">
-                    <h4 style="color:var(--color-neon-purple);margin-bottom:0.75rem;font-size:1.1rem;">Content ROI Measurement</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Data-driven content marketing typically delivers much better conversion.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">Content</span><span class="badge">ROI</span><span class="badge">Analytics</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4 style="color:var(--color-neon-orange);margin-bottom:0.75rem;font-size:1.1rem;">📱 Social Commerce Growth</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Social shopping is booming, with more buyers purchasing directly from social platforms.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">E-commerce</span><span class="badge">Social</span><span class="badge">Conversions</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4 style="color:#4ade80;margin-bottom:0.75rem;font-size:1.1rem;">🎯 Hyper-Personalization</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Customers now expect personalized experiences across channels.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">AI</span><span class="badge">Experience</span><span class="badge">Conversion</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4 style="color:#f472b6;margin-bottom:0.75rem;font-size:1.1rem;">🤝 Community Building</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.95rem;margin-bottom:1rem;">Loyal communities drive sustainable growth.</p>
-                    <div style="display:flex;gap:0.5rem;margin-top:1rem;">
-                        <span class="badge">Loyalty</span><span class="badge">Community</span><span class="badge">Growth</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-header" style="margin-top:4rem;">
-                <h2>Proven <span style="color:var(--color-neon-purple);">Growth Strategies</span></h2>
-                <p>Framework-driven approaches that guarantee measurable results.</p>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
-                <div class="benefit-item">
-                    <h4 style="color:var(--color-neon-purple);margin-bottom:1rem;">▶ The 90-10 Rule</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Focus most effort on proven channels instead of testing everything.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4 style="color:var(--color-neon-orange);margin-bottom:1rem;">⚡ Rapid Testing Framework</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Run small, controlled tests weekly and implement winners fast.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4 style="color:#4ade80;margin-bottom:1rem;">🔄 Growth Loops</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Design loops where one user leads to more users or revenue.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4 style="color:#818cf8;margin-bottom:1rem;">💡 Unit Economics</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Know CAC, LTV, and payback period to scale without guessing.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4 style="color:#f472b6;margin-bottom:1rem;">📊 Data-Driven Decisions</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Dashboards and KPIs replace intuition-only decisions.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4 style="color:#f97316;margin-bottom:1rem;">🎯 Channel Stacking</h4>
-                    <p style="color:var(--color-dark-300);font-size:0.9rem;line-height:1.6;">Combine multiple reliable channels for resilience and scale.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="bg-dark">
-        <div class="container" style="text-align:center;">
-            <h2 style="margin-bottom:1.5rem;">Ready to Start <span style="color:var(--color-neon-orange);">Fixing Growth?</span></h2>
-            <p style="color:var(--color-dark-300);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">
-                Book a free 30-min execution call. We’ll show you what’s broken and how to fix it.
-            </p>
-            <button class="btn btn-primary" onclick="openModal('Free Audit')">Schedule Your Free Audit</button>
-        </div>
-    </section>
-
-    <!-- Footer with social links -->
-    <footer id="footer">
-        <div class="container">
-            <div style="text-align:center;">
-                <div class="logo" style="margin-bottom:1rem;justify-content:center;">
-                    <div class="logo-icon">GC</div>
-                    <span>GrowCaptain</span>
-                </div>
-                <p>We Navigate. You Scale.</p>
-                <p style="font-size:0.85rem;margin-top:1rem;color:var(--color-dark-300);">
-                    Growth execution partner for startups and SMEs. Real systems. Real results.
-                </p>
-
-                <p style="margin-top:2rem;">
-                    <a href="mailto:info@growcaptain.in">info@growcaptain.in</a>
-                </p>
-                <p style="margin-top:1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-                    <a href="https://www.linkedin.com/company/grow-captainbusinessconsulting/in"
-                       target="_blank" rel="noopener">
-                        LinkedIn
-                    </a>
-                    <span style="color:var(--color-dark-300);">|</span>
-                    <a href="https://www.linkedin.com/company/grow-captainbusinessconsulting/whatsapp-8129589051"
-                       target="_blank" rel="noopener">
-                        Instagram
-                    </a>
-                    <span style="color:var(--color-dark-300);">|</span>
-                    <a href="https://wa.me/918129589051"
-                       target="_blank" rel="noopener">
-                        WhatsApp: 81295 89051
-                    </a>
-                </p>
-            </div>
-            <div style="border-top:1px solid rgba(147,51,234,0.1);padding-top:2rem;margin-top:2rem;">
-                <p>&copy; 2025 GrowCaptain. All rights reserved.</p>
-                <p style="margin-top:0.5rem;">Built for founders serious about execution.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()">×</button>
-            <div class="modal-header">
-                <h2 id="captain-name">Deploy Captain</h2>
-                <p>Share your details to get started</p>
-            </div>
-            <form id="client-form" action="#" method="POST" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label class="form-label">Full Name *</label>
-                    <input type="text" name="name" id="name" class="form-input" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Company Name *</label>
-                    <input type="text" name="company" id="company" class="form-input" placeholder="Your Company" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" name="email" id="email" class="form-input" placeholder="john@company.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone *</label>
-                        <input type="tel" name="phone" id="phone" class="form-input" placeholder="+91 98765 43210" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Industry *</label>
-                    <select name="industry" id="industry" class="form-select" required>
-                        <option value="">Select Industry</option>
-                        <option value="SaaS & Tech">SaaS & Tech</option>
-                        <option value="EdTech & Training">EdTech & Training</option>
-                        <option value="E-commerce & Retail">E-commerce & Retail</option>
-                        <option value="Fintech & Finance">Fintech & Finance</option>
-                        <option value="Fitness & Wellness">Fitness & Wellness</option>
-                        <option value="B2B Services">B2B Services</option>
-                        <option value="Agencies & Creative">Agencies & Creative</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Monthly Revenue *</label>
-                    <select name="revenue" id="revenue" class="form-select" required>
-                        <option value="">Select Range</option>
-                        <option value="₹0 - ₹1L">₹0 - ₹1L</option>
-                        <option value="₹1L - ₹5L">₹1L - ₹5L</option>
-                        <option value="₹5L - ₹10L">₹5L - ₹10L</option>
-                        <option value="₹10L - ₹25L">₹10L - ₹25L</option>
-                        <option value="₹25L+">₹25L+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Team Size *</label>
-                    <select name="teamSize" id="teamSize" class="form-select" required>
-                        <option value="">Select Team Size</option>
-                        <option value="1-5 People">1-5 People</option>
-                        <option value="5-10 People">5-10 People</option>
-                        <option value="10-20 People">10-20 People</option>
-                        <option value="20+ People">20+ People</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Biggest Growth Challenge *</label>
-                    <select name="challenge" id="challenge" class="form-select" required>
-                        <option value="">Select Challenge</option>
-                        <option value="Sales & Lead Generation">Sales & Lead Generation</option>
-                        <option value="Operations & Efficiency">Operations & Efficiency</option>
-                        <option value="Brand & Positioning">Brand & Positioning</option>
-                        <option value="Finance & Cash Flow">Finance & Cash Flow</option>
-                        <option value="Automation & AI">Automation & AI</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">Get Started Now 🚀</button>
-            </form>
-        </div>
+  <nav id="nav">
+    <div>
+      <a href="#hero" class="logo">
+        <div class="logo-icon">GC</div>
+        <span>GrowCaptain</span>
+      </a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#captains">Captains</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#fractional">Fractional</a></li>
+        <li><a href="#training">Sales Training</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="openModal('Consultation')">Chat with AI</button>
     </div>
+  </nav>
 
-    <!-- Thank You Card -->
-    <div id="thankyou-card"
-         style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:120;">
-      <div style="position:absolute;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);"></div>
-      <div style="
-          position:relative;
-          max-width:360px;
-          width:90%;
-          margin:0 auto;
-          background:linear-gradient(180deg,rgba(15,23,42,0.98),rgba(3,7,18,0.99));
-          border-radius:1rem;
-          padding:2rem;
-          border:1px solid rgba(147,51,234,0.4);
-          box-shadow:0 20px 60px rgba(0,0,0,0.7);
-          text-align:center;
-        ">
-        <div style="
-            width:56px;height:56px;border-radius:999px;
-            margin:0 auto 1rem;
-            display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(135deg,#22c55e,#16a34a);
-            color:white;font-size:1.8rem;
-            box-shadow:0 0 20px rgba(34,197,94,0.6);
-          ">
-          ✓
-        </div>
-        <h3 style="color:#e5e7eb;font-size:1.3rem;margin-bottom:.5rem;">Thank you!</h3>
-        <p style="color:#9ca3af;font-size:.95rem;margin-bottom:1.5rem;">
-          Your details are saved. Our team will connect with you shortly.
-        </p>
-        <button onclick="closeThankYouCard()"
-                style="
-                  padding:.75rem 1.5rem;
-                  border-radius:.5rem;
-                  border:none;
-                  cursor:pointer;
-                  font-weight:600;
-                  background:linear-gradient(90deg,#813588,#ff7f00);
-                  color:#fff;
-                  box-shadow:0 8px 24px rgba(129,53,136,0.45);
-                ">
-          Close
-        </button>
+  <section class="hero" id="hero">
+    <div class="hero-background">
+      <div class="hero-bg-gradient"></div>
+      <div class="glow-1"></div>
+      <div class="glow-2"></div>
+    </div>
+    <div class="hero-orbit"></div>
+
+    <div class="hero-content">
+      <h1>
+        <span class="gradient">We Navigate.</span><br>
+        You Scale.
+      </h1>
+      <p class="hero-subtitle">
+        GrowCaptain builds your growth engine — Sales, Ops, Brand, Finance &amp; AI — with execution-ready systems. Stop struggling. Start scaling.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" onclick="openModal('Growth System')">Start Fixing Growth</button>
+        <button class="btn btn-secondary" onclick="openModal('Free Audit')">Book Free Audit</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Founders Guided</div></div>
+        <div class="stat"><div class="stat-number">45%</div><div class="stat-label">Avg Revenue Growth</div></div>
+        <div class="stat"><div class="stat-number">3.5mo</div><div class="stat-label">Avg Time to Execute</div></div>
+        <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Retention Rate</div></div>
+        <div class="stat"><div class="stat-number">₹2.5Cr+</div><div class="stat-label">Revenue Generated</div></div>
+        <div class="stat"><div class="stat-number">6</div><div class="stat-label">Growth Captains</div></div>
       </div>
     </div>
+  </section>
 
-    <!-- Chatbot -->
-    <div class="ai-bubble">
-        <button class="ai-button" id="chatbot-toggle" title="Chat with GrowCaptain">🤖</button>
-    </div>
-    <div class="chatbot-window" id="chatbot-window">
-        <div class="chatbot-header">
-            <h3>GrowCaptain AI</h3>
-            <button class="chatbot-close" id="chatbot-close">×</button>
+  <section class="bg-panel">
+    <div class="container">
+      <div class="section-header">
+        <h2>Are You Facing These <span style="color:var(--color-neon-orange);">Growth Blockers?</span></h2>
+        <p>Most startups and SMEs struggle with the same execution gaps. You're not alone.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <h4>Sales Chaos</h4>
+          <p>No predictable lead flow. Inconsistent conversion. Relies on founder hustle. Can't scale without you.</p>
         </div>
-        <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot">
-                <div class="message-content">
-                    👋 Hi! I'm GrowCaptain's AI assistant. Ask about growth, sales, or systems.
-                </div>
+        <div class="benefit-item">
+          <h4>Operational Mess</h4>
+          <p>Everything manual. No systems. Team works without playbooks. Growing pains at every stage.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Brand Invisibility</h4>
+          <p>Message unclear. Gets lost in market. Can't communicate unique value. Competing on price.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Financial Blindness</h4>
+          <p>Don't understand unit economics. Cash burns unpredictably. Runway anxiety. No data-driven decisions.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Growth Plateau</h4>
+          <p>Hit a ceiling. Can't get beyond founder-led execution. Team bottlenecks everywhere.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Automation Gap</h4>
+          <p>Manual work everywhere. Competitors 10x faster. Missing AI opportunities. No integration.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Lead Quality Issues</h4>
+          <p>Plenty of enquiries but very few ideal customers. Sales team wastes time on unfit leads and conversion stays flat.</p>
+        </div>
+        <div class="benefit-item">
+          <h4>Founder Bottleneck</h4>
+          <p>Every key decision, deal, and fire-fighting depends on you. Growth stalls the moment you step back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-panel" id="captains">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet Your Growth <span style="color:var(--color-neon-purple);">Captains</span></h2>
+        <p>Five specialized systems that fix the core pillars of business growth.</p>
+      </div>
+      <div class="captains-grid">
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#813588,#ff7f00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Sales Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">Leads aren't converting. Manual unpredictable process.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Build conversion systems, funnels, closing sequences.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">+13% conversion</div>
+          </div>
+          <div><span class="badge">Conversion Systems</span><span class="badge">Qualified Leads</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Sales Captain')">Deploy Captain</button>
+        </div>
+
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#1e293b,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ops Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">Chaotic operations. No playbooks. No scale.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Design SOPs, workflows, accountability systems.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">8hrs/week saved</div>
+          </div>
+          <div><span class="badge">SOP Library</span><span class="badge">Ops Dashboards</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Ops Captain')">Deploy Captain</button>
+        </div>
+
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#db2777,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Brand Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">Message unclear. Invisible in market.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Clarify positioning, messaging, identity narrative.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">4x engagement</div>
+          </div>
+          <div><span class="badge">Positioning</span><span class="badge">Content Angle</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Brand Captain')">Deploy Captain</button>
+        </div>
+
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#22c55e,#15803d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Finance Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">Don't understand unit economics. Cash bleeding.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Build models, dashboards, cash flow strategies.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">Runway +12mo</div>
+          </div>
+          <div><span class="badge">Unit Economics</span><span class="badge">Cash View</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('Finance Captain')">Deploy Captain</button>
+        </div>
+
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#0ea5e9,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">AI Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">Missing automation. Competitors 10x faster.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Implement AI workflows, CRM automation, intelligence.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">70% automation</div>
+          </div>
+          <div><span class="badge">Workflows</span><span class="badge">AI Playbooks</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('AI Captain')">Deploy Captain</button>
+        </div>
+
+        <div class="card">
+          <h3><span style="background:linear-gradient(90deg,#4b5563,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">HR Captain</span></h3>
+          <div class="card-section">
+            <div class="card-label">Problem</div>
+            <div class="card-text">High turnover. No culture. Team conflicts. No growth path.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Solution</div>
+            <div class="card-text">Build culture, hiring systems, retention playbooks.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Outcome</div>
+            <div class="card-outcome">80% retention</div>
+          </div>
+          <div><span class="badge">Scorecards</span><span class="badge">Culture Rituals</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;" onclick="openModal('HR Captain')">Deploy Captain</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Services Built for <span style="color:var(--color-neon-orange);">Execution</span></h2>
+        <p>Not workshops. Not reports. Real systems that fix real problems. Fast.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#813588,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Funnels</h3>
+          <div class="card-section"><div class="card-label">Landing Pages</div><div class="card-text">Lift conversion from single digits into strong performing ranges.</div></div>
+          <div class="card-section"><div class="card-label">Sales Funnel</div><div class="card-text">Engineer flows that deliver more qualified leads.</div></div>
+          <div class="card-section"><div class="card-label">Email Sequences</div><div class="card-text">Set up automated nurture with better opens and replies.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#f97316,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Growth</h3>
+          <div class="card-section"><div class="card-label">Experiments</div><div class="card-text">2–3 focused sprints to discover scalable wins.</div></div>
+          <div class="card-section"><div class="card-label">Scaling Systems</div><div class="card-text">Increase output per rep with better processes.</div></div>
+          <div class="card-section"><div class="card-label">CAC Optimization</div><div class="card-text">Lower acquisition cost while protecting quality.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#6366f1,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Brand</h3>
+          <div class="card-section"><div class="card-label">Positioning</div><div class="card-text">Sharpen your narrative so the right buyers understand you.</div></div>
+          <div class="card-section"><div class="card-label">Identity</div><div class="card-text">Cohesive visual language that feels premium.</div></div>
+          <div class="card-section"><div class="card-label">Content</div><div class="card-text">Authority-building content that generates intent.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#0ea5e9,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Automation</h3>
+          <div class="card-section"><div class="card-label">CRM &amp; Workflows</div><div class="card-text">Live visibility into deals and tasks.</div></div>
+          <div class="card-section"><div class="card-label">WhatsApp</div><div class="card-text">Always-on engagement without manual follow‑up.</div></div>
+          <div class="card-section"><div class="card-label">Integrations</div><div class="card-text">Less copy‑paste, more execution.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#6366f1,#e11d48);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Templates</h3>
+          <div class="card-section"><div class="card-label">SOP Library</div><div class="card-text">Battle‑tested process docs for your core functions.</div></div>
+          <div class="card-section"><div class="card-label">Sales Scripts</div><div class="card-text">Proven call and meeting flows.</div></div>
+          <div class="card-section"><div class="card-label">Dashboards</div><div class="card-text">Key metrics in one place.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#db2777,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Culture</h3>
+          <div class="card-section"><div class="card-label">Hiring Systems</div><div class="card-text">Scorecards and pipelines for the right talent.</div></div>
+          <div class="card-section"><div class="card-label">Retention</div><div class="card-text">Simple rituals that keep your best people.</div></div>
+          <div class="card-section"><div class="card-label">Playbooks</div><div class="card-text">Codified ways of working for new joiners.</div></div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#0ea5e9,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Analytics</h3>
+          <div class="card-section">
+            <div class="card-label">Tracking Setup</div>
+            <div class="card-text">Implement analytics that actually match your funnel and sales stages.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Attribution</div>
+            <div class="card-text">See which channels and campaigns really create qualified pipeline.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Reporting Rhythm</div>
+            <div class="card-text">Simple weekly and monthly reports that drive decisions, not spreadsheets.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="background:linear-gradient(90deg,#22c55e,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.4rem;">Enablement</h3>
+          <div class="card-section">
+            <div class="card-label">Sales Kits</div>
+            <div class="card-text">Decks, one-pagers, and FAQs so the team sells with one clear story.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Playbooks</div>
+            <div class="card-text">Step‑by‑step guides for outbound, inbound, and expansion motions.</div>
+          </div>
+          <div class="card-section">
+            <div class="card-label">Onboarding</div>
+            <div class="card-text">Onboarding flows that ramp new hires into your systems quickly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fractional" style="background:linear-gradient(135deg,rgba(129,53,136,0.12) 0,rgba(255,127,0,0.08) 100%);padding:6rem 1rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;z-index:0;">
+      <div style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(129,53,136,0.22) 0,transparent 70%);border-radius:50%;top:5%;left:5%;filter:blur(55px);animation:float 7s ease-in-out infinite;"></div>
+      <div style="position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(234,88,12,0.18) 0,transparent 70%);border-radius:50%;bottom:5%;right:5%;filter:blur(55px);animation:float 7s ease-in-out infinite 2s;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-header" style="margin-bottom:3rem;">
+        <h2>Fractional <span style="color:var(--color-neon-purple);">Growth Partner</span></h2>
+        <p>Executive-level growth leadership (10–20 hours/week) without a full-time CXO cost.</p>
+      </div>
+      <div class="captains-grid" style="grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);">
+        <div>
+          <div style="margin-bottom:2rem;">
+            <span class="badge" style="background:#c6cae5;border:1px solid rgba(129,53,136,0.7);color:var(--color-neon-purple);">Fractional CGO / CMO</span>
+            <p style="margin-top:1rem;color:var(--color-dark-300);font-size:0.95rem;">
+              Ideal for funded startups and SMEs that have revenue and a team but lack senior growth leadership.
+            </p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+            <div class="benefit-item">
+              <h4>What You Get</h4>
+              <p>Revenue roadmap, channel strategy, and experiment design led by a fractional growth head.</p>
             </div>
+            <div class="benefit-item">
+              <h4>How It Works</h4>
+              <p>Weekly leadership calls, sprint planning, dashboards, and embedded collaboration.</p>
+            </div>
+            <div class="benefit-item">
+              <h4>Why Fractional</h4>
+              <p>C‑suite expertise at a fraction of cost, with the flexibility to scale up or down.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem;">
+            <span class="badge">Revenue Strategy</span>
+            <span class="badge">Channel Prioritisation</span>
+            <span class="badge">Experiment Design</span>
+            <span class="badge">Team Coaching</span>
+            <span class="badge">Investor Metrics</span>
+          </div>
+          <button class="btn btn-primary" style="margin-top:2rem;padding:1rem 2.4rem;" onclick="openModal('Fractional Growth Partner')">
+            Book Fractional Growth Call
+          </button>
         </div>
-        <div class="quick-replies" id="quick-replies">
-            <button class="quick-reply" onclick="sendMessage('Tell me about Sales Captain')">Sales Systems</button>
-            <button class="quick-reply" onclick="sendMessage('What is your pricing?')">Pricing</button>
-            <button class="quick-reply" onclick="sendMessage('How does implementation work?')">How It Works</button>
+
+        <div style="position:relative;">
+          <div style="position:relative;border-radius:1.5rem;overflow:hidden;border:1px solid rgba(129,53,136,0.6);box-shadow:0 22px 60px rgba(148,163,184,0.7);background:linear-gradient(135deg,#dde1f6,#cbd2f3);">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=900&h=600&fit=crop"
+                 alt="Fractional growth leader with startup team"
+                 style="width:100%;height:100%;max-height:360px;object-fit:cover;display:block;opacity:0.92;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,#e5e7f0 0,transparent 55%);"></div>
+            <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;">
+                <div>
+                  <p style="font-size:0.8rem;color:#111827;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.35rem;">Fractional Growth Deck</p>
+                  <p style="font-size:1.1rem;font-weight:600;color:#020617;">45% Avg Revenue Lift · 3–6 Month Engagements</p>
+                </div>
+                <div style="display:flex;gap:0.75rem;">
+                  <div style="background:#e0e3f5;padding:0.5rem 0.9rem;border-radius:999px;border:1px solid rgba(129,53,136,0.6);font-size:0.8rem;">
+                    10–20 hrs/week
+                  </div>
+                  <div style="background:#e0e3f5;padding:0.5rem 0.9rem;border-radius:999px;border:1px solid rgba(129,53,136,0.6);font-size:0.8rem;">
+                    Founder-Led Teams
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;top:-12px;right:-12px;background:#e1e4f6;border-radius:1rem;padding:0.9rem 1.2rem;border:1px solid rgba(212,175,55,0.9);box-shadow:0 14px 40px rgba(148,163,184,0.8);">
+            <div style="font-size:0.75rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.12em;">Typical Outcome</div>
+            <div style="margin-top:0.3rem;font-size:1.3rem;font-weight:700;color:var(--color-gold);">3x</div>
+            <div style="font-size:0.8rem;color:#4b5563;">Pipeline in 90 days</div>
+          </div>
         </div>
-        <div class="chatbot-input-area">
-            <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask something...">
-            <button class="chatbot-send" onclick="sendMessage()">Send</button>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <script>
-        function openModal(captainName){
-            const modal=document.getElementById('modal-overlay');
-            document.getElementById('captain-name').textContent=`Deploy ${captainName}`;
-            modal.classList.add('active');
+  <section id="training">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sales <span style="color:var(--color-neon-purple);">Training Programs</span></h2>
+        <p>Intensive sales bootcamps designed to transform your team into a predictable, high-performing revenue engine.</p>
+      </div>
+      <div class="training-grid">
+        <div class="training-card">
+          <img src="https://pplx-res.cloudinary.com/image/upload/v1765687489/search_images/4c2f166b795fb09cf15bb0735ab360a74e41ab37.jpg" alt="Sales Audit Training" class="training-image">
+          <h3>Sales Audit Training</h3>
+          <p class="training-duration">3–4 hours diagnostic</p>
+          <div class="training-content">
+            <p><strong>Perfect for:</strong> Diagnosing your sales funnel, call flow, and lead handling gaps so you know exactly what to fix first.</p>
+            <ul>
+              <li>Structured sales audit framework</li>
+              <li>Identify leak points across pipeline stages</li>
+              <li>Create a focused sales fix roadmap</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('Sales Audit Training')">Enroll Now</button>
+        </div>
+
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Day Sales Workshop" class="training-image">
+          <h3>1-Day Sales Workshop</h3>
+          <p class="training-duration">8 hours intensive</p>
+          <div class="training-content">
+            <p><strong>Perfect for:</strong> Fast wins, sharper objections, and aligned scripts for your entire sales team.</p>
+            <ul>
+              <li>Pipeline &amp; ICP clarity</li>
+              <li>Script, objection handling, and roleplays</li>
+              <li>30-day outbound action plan</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('1-Day Sales Workshop')">Enroll Now</button>
+        </div>
+
+        <div class="training-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="1-Month Sales Program" class="training-image">
+          <h3>1-Month Sales Program</h3>
+          <p class="training-duration">20+ sessions</p>
+          <div class="training-content">
+            <p><strong>Perfect for:</strong> Building a complete prospecting-to-close system and upgrading your sales managers.</p>
+            <ul>
+              <li>Frequent coaching and call reviews</li>
+              <li>Discovery, demo, and closing frameworks</li>
+              <li>Manager systems to sustain performance</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary" style="width:100%;margin:1.5rem 0 1rem;" onclick="openModal('1-Month Sales Program')">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-panel">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:1.5rem;">Ready to Start <span style="color:var(--color-neon-orange);">Fixing Growth?</span></h2>
+      <p style="color:var(--color-dark-300);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">
+        Book a free 30-min execution call. We’ll show you what’s broken and how to fix it.
+      </p>
+      <button class="btn btn-primary" onclick="openModal('Free Audit')">Schedule Your Free Audit</button>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="logo" style="margin-bottom:1rem;justify-content:center;">
+          <div class="logo-icon">GC</div>
+          <span>GrowCaptain</span>
+        </div>
+        <p>We Navigate. You Scale.</p>
+        <p style="font-size:0.85rem;margin-top:1rem;color:var(--color-dark-300);">
+          Growth execution partner for startups and SMEs. Real systems. Real results.
+        </p>
+
+        <p style="margin-top:2rem;">
+          <a href="mailto:info@growcaptain.in">info@growcaptain.in</a>
+        </p>
+        <p style="margin-top:1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-size:0.9rem;">
+          <a href="https://www.linkedin.com/company/grow-captainbusinessconsulting" target="_blank" rel="noopener">LinkedIn</a>
+          <span style="color:var(--color-dark-300);">|</span>
+          <a href="https://www.instagram.com/grow.captain" target="_blank" rel="noopener">Instagram</a>
+          <span style="color:var(--color-dark-300);">|</span>
+          <a href="https://wa.me/918129589051" target="_blank" rel="noopener">WhatsApp: 81295 89051</a>
+        </p>
+      </div>
+      <div style="border-top:1px solid rgba(148,163,184,0.7);padding-top:2rem;margin-top:2rem;">
+        <p>&copy; 2025 GrowCaptain. All rights reserved.</p>
+        <p style="margin-top:0.5rem;">Built for founders who are serious about execution.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal()">×</button>
+      <div class="modal-header">
+        <h2 id="captain-name">Deploy Captain</h2>
+        <p>Share your details to get started</p>
+      </div>
+      <form id="client-form" action="#" method="POST" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" id="name" class="form-input" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name *</label>
+          <input type="text" name="company" id="company" class="form-input" placeholder="Your Company" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" name="email" id="email" class="form-input" placeholder="john@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone *</label>
+            <input type="tel" name="phone" id="phone" class="form-input" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Industry *</label>
+          <select name="industry" id="industry" class="form-select" required>
+            <option value="">Select Industry</option>
+            <option value="SaaS & Tech">SaaS & Tech</option>
+            <option value="EdTech & Training">EdTech & Training</option>
+            <option value="E-commerce & Retail">E-commerce & Retail</option>
+            <option value="Fintech & Finance">Fintech & Finance</option>
+            <option value="Fitness & Wellness">Fitness & Wellness</option>
+            <option value="B2B Services">B2B Services</option>
+            <option value="Agencies & Creative">Agencies & Creative</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Monthly Revenue *</label>
+          <select name="revenue" id="revenue" class="form-select" required>
+            <option value="">Select Range</option>
+            <option value="₹0 - ₹1L">₹0 - ₹1L</option>
+            <option value="₹1L - ₹5L">₹1L - ₹5L</option>
+            <option value="₹5L - ₹10L">₹5L - ₹10L</option>
+            <option value="₹10L - ₹25L">₹10L - ₹25L</option>
+            <option value="₹25L+">₹25L+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Team Size *</label>
+          <select name="teamSize" id="teamSize" class="form-select" required>
+            <option value="">Select Team Size</option>
+            <option value="1-5 People">1-5 People</option>
+            <option value="5-10 People">5-10 People</option>
+            <option value="10-20 People">10-20 People</option>
+            <option value="20+ People">20+ People</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Biggest Growth Challenge *</label>
+          <select name="challenge" id="challenge" class="form-select" required>
+            <option value="">Select Challenge</option>
+            <option value="Sales & Lead Generation">Sales & Lead Generation</option>
+            <option value="Operations & Efficiency">Operations & Efficiency</option>
+            <option value="Brand & Positioning">Brand & Positioning</option>
+            <option value="Finance & Cash Flow">Finance & Cash Flow</option>
+            <option value="Automation & AI">Automation & AI</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Get Started Now</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="thankyou-card"
+       style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:120;">
+    <div style="position:absolute;inset:0;background:rgba(15,23,42,0.4);backdrop-filter:blur(4px);"></div>
+    <div style="position:relative;max-width:360px;width:90%;margin:0 auto;background:#eff1fb;border-radius:1rem;padding:2rem;border:1px solid rgba(148,163,184,0.9);box-shadow:0 20px 60px rgba(15,23,42,0.4);text-align:center;">
+      <h3 style="color:#111827;font-size:1.3rem;margin-bottom:0.5rem;">Thank you!</h3>
+      <p style="color:#4b5563;font-size:0.95rem;margin-bottom:1.5rem;">
+        Your details are saved. Our team will connect with you shortly.
+      </p>
+      <button onclick="closeThankYouCard()"
+              style="padding:0.75rem 1.5rem;border-radius:0.5rem;border:none;cursor:pointer;font-weight:600;background:#111827;color:#f9fafb;box-shadow:0 8px 24px rgba(15,23,42,0.45);">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <div class="ai-bubble">
+    <button class="ai-button" id="chatbot-toggle" title="Chat with GrowCaptain">GC</button>
+  </div>
+  <div class="chatbot-window" id="chatbot-window">
+    <div class="chatbot-header">
+      <h3>GrowCaptain AI</h3>
+      <button class="chatbot-close" id="chatbot-close">×</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="message bot">
+        <div class="message-content">
+          Hi, this assistant can answer questions about captains, pricing, or which system to fix first.
+        </div>
+      </div>
+    </div>
+    <div class="quick-replies" id="quick-replies">
+      <button class="quick-reply" onclick="sendMessage('Tell me about Sales Captain')">Sales Systems</button>
+      <button class="quick-reply" onclick="sendMessage('What is your pricing?')">Pricing</button>
+      <button class="quick-reply" onclick="sendMessage('How does implementation work?')">How It Works</button>
+    </div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask something...">
+      <button class="chatbot-send" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(captainName){
+      const modal=document.getElementById('modal-overlay');
+      document.getElementById('captain-name').textContent=`Deploy ${captainName}`;
+      modal.classList.add('active');
+    }
+    function closeModal(){
+      document.getElementById('modal-overlay').classList.remove('active');
+    }
+    function handleFormSubmit(event){
+      event.preventDefault();
+      closeModal();
+      document.getElementById('client-form').reset();
+      showThankYouCard();
+    }
+    function showThankYouCard(){
+      const card=document.getElementById('thankyou-card');
+      if(card) card.style.display='flex';
+    }
+    function closeThankYouCard(){
+      const card=document.getElementById('thankyou-card');
+      if(card) card.style.display='none';
+    }
+    document.getElementById('modal-overlay').addEventListener('click',e=>{
+      if(e.target.id==='modal-overlay') closeModal();
+    });
+
+    const chatbotToggle=document.getElementById('chatbot-toggle');
+    const chatbotClose=document.getElementById('chatbot-close');
+    const chatbotWindow=document.getElementById('chatbot-window');
+    const chatbotInput=document.getElementById('chatbot-input');
+    const chatbotMessages=document.getElementById('chatbot-messages');
+    const quickReplies=document.getElementById('quick-replies');
+
+    chatbotToggle.addEventListener('click',()=>chatbotWindow.classList.toggle('active'));
+    chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));
+
+    const responses={
+      'tell':'Sales Captain builds predictable lead flow and conversion with funnels, scripts, and CRM automation.',
+      'pricing':'Start with a free audit, then choose focused growth sprints or full execution depending on scope.',
+      'implementation':'Audit, design systems, deploy with your team, and iterate for 3–4 months on execution.',
+      'ops':'Ops Captain reduces chaos with SOPs, workflows, and clear accountability.',
+      'brand':'Brand Captain clarifies your positioning and story so you attract right-fit customers.',
+      'finance':'Finance Captain sets up models and dashboards for clear economics and runway.',
+      'ai':'AI Captain implements automations across CRM, WhatsApp, and internal processes.',
+      'growcaptain':'GrowCaptain is a growth execution partner for startups and SMEs across Sales, Ops, Brand, Finance and AI.',
+      'book':'Click “Schedule Your Free Audit” or any “Deploy Captain” button and submit your details.',
+      'default':'Ask about captains, pricing, implementation, or which system to fix first and this assistant will guide you.'
+    };
+
+    function sendMessage(message=null){
+      const text=message||chatbotInput.value.trim();
+      if(!text) return;
+      const userMsg=document.createElement('div');
+      userMsg.className='message user';
+      userMsg.innerHTML=`<div class="message-content">${text}</div>`;
+      chatbotMessages.appendChild(userMsg);
+      chatbotInput.value='';
+      quickReplies.style.display='none';
+      chatbotMessages.scrollTop=chatbotMessages.scrollHeight;
+
+      setTimeout(()=>{
+        const lower=text.toLowerCase();
+        let botResponse=responses['default'];
+        for(const [key,val] of Object.entries(responses)){
+          if(key!=='default' && lower.includes(key)){
+            botResponse=val;break;
+          }
         }
-        function closeModal(){
-            document.getElementById('modal-overlay').classList.remove('active');
-        }
+        const botMsg=document.createElement('div');
+        botMsg.className='message bot';
+        botMsg.innerHTML=`<div class="message-content">${botResponse}</div>`;
+        chatbotMessages.appendChild(botMsg);
+        chatbotMessages.scrollTop=chatbotMessages.scrollHeight;
+      },500);
+    }
+    chatbotInput.addEventListener('keypress',e=>{if(e.key==='Enter')sendMessage();});
 
-        function handleFormSubmit(event){
-            event.preventDefault();
-            closeModal();
-            document.getElementById('client-form').reset();
-            showThankYouCard();
-        }
-        function showThankYouCard(){
-            const card=document.getElementById('thankyou-card');
-            if(card) card.style.display='flex';
-        }
-        function closeThankYouCard(){
-            const card=document.getElementById('thankyou-card');
-            if(card) card.style.display='none';
-        }
+    const nav=document.getElementById('nav');
+    const hamburger=document.getElementById('hamburger');
+    const navLinks=document.getElementById('nav-links');
 
-        document.getElementById('modal-overlay').addEventListener('click',e=>{
-            if(e.target.id==='modal-overlay') closeModal();
-        });
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY>10){
+        nav.style.background='rgba(223,225,238,0.95)';
+        nav.style.borderBottomColor='rgba(148,163,184,0.9)';
+      }else{
+        nav.style.background='rgba(229,231,240,0.9)';
+        nav.style.borderBottomColor='rgba(148,163,184,0.55)';
+      }
+    });
+    hamburger.addEventListener('click',()=>navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(link=>{
+      link.addEventListener('click',()=>navLinks.classList.remove('active'));
+    });
 
-        const chatbotToggle=document.getElementById('chatbot-toggle');
-        const chatbotClose=document.getElementById('chatbot-close');
-        const chatbotWindow=document.getElementById('chatbot-window');
-        const chatbotInput=document.getElementById('chatbot-input');
-        const chatbotMessages=document.getElementById('chatbot-messages');
-        const quickReplies=document.getElementById('quick-replies');
-
-        chatbotToggle.addEventListener('click',()=>chatbotWindow.classList.toggle('active'));
-        chatbotClose.addEventListener('click',()=>chatbotWindow.classList.remove('active'));
-
-        const responses={
-            'tell':'Sales Captain builds predictable lead flow and conversion with funnels, scripts, and CRM automation.',
-            'pricing':'We start with a free audit and then offer growth sprints or full execution depending on scope.',
-            'implementation':'We audit, design systems, deploy with your team, and iterate for 3–4 months.',
-            'ops':'Ops Captain reduces chaos with SOPs, workflows, and clear accountability.',
-            'brand':'Brand Captain clarifies your positioning and story so you attract right-fit customers.',
-            'finance':'Finance Captain sets up models and dashboards for clear economics and runway.',
-            'ai':'AI Captain implements automations across CRM, WhatsApp, and internal processes.',
-            'growcaptain':'GrowCaptain is a growth execution partner for startups and SMEs across Sales, Ops, Brand, Finance and AI.',
-            'book':'Click “Schedule Your Free Audit” or any “Deploy Captain” button and submit your details.',
-            'default':'Ask about captains, pricing, implementation, or which system to fix first and I’ll guide you.'
-        };
-
-        function sendMessage(message=null){
-            const text=message||chatbotInput.value.trim();
-            if(!text) return;
-            const userMsg=document.createElement('div');
-            userMsg.className='message user';
-            userMsg.innerHTML=`<div class="message-content">${text}</div>`;
-            chatbotMessages.appendChild(userMsg);
-            chatbotInput.value='';
-            quickReplies.style.display='none';
-            chatbotMessages.scrollTop=chatbotMessages.scrollHeight;
-
-            setTimeout(()=>{
-                const lower=text.toLowerCase();
-                let botResponse=responses['default'];
-                for(const [key,val] of Object.entries(responses)){
-                    if(key!=='default' && lower.includes(key)){
-                        botResponse=val; break;
-                    }
-                }
-                const botMsg=document.createElement('div');
-                botMsg.className='message bot';
-                botMsg.innerHTML=`<div class="message-content">${botResponse}</div>`;
-                chatbotMessages.appendChild(botMsg);
-                chatbotMessages.scrollTop=chatbotMessages.scrollHeight;
-            },500);
-        }
-        chatbotInput.addEventListener('keypress',e=>{ if(e.key==='Enter') sendMessage(); });
-
-        const nav=document.getElementById('nav');
-        const hamburger=document.getElementById('hamburger');
-        const navLinks=document.getElementById('nav-links');
-
-        window.addEventListener('scroll',()=>{
-            if(window.scrollY>10){
-                nav.style.background='rgba(3,7,18,0.95)';
-                nav.style.borderBottomColor='rgba(147,51,234,0.2)';
-            } else {
-                nav.style.background='rgba(3,7,18,0.8)';
-                nav.style.borderBottomColor='rgba(147,51,234,0.1)';
-            }
-        });
-
-        hamburger.addEventListener('click',()=>navLinks.classList.toggle('active'));
-        document.querySelectorAll('.nav-links a').forEach(link=>{
-            link.addEventListener('click',()=>navLinks.classList.remove('active'));
-        });
-
-        function generateParticles(){
-            const heroBackground=document.querySelector('.hero-background');
-            if(heroBackground){
-                for(let i=0;i<20;i++){
-                    const p=document.createElement('div');
-                    p.className='particle';
-                    p.style.left=Math.random()*100+'%';
-                    p.style.top=Math.random()*100+'%';
-                    p.style.animation=`float ${Math.random()*4+4}s ease-in-out infinite`;
-                    p.style.animationDelay=Math.random()*2+'s';
-                    heroBackground.appendChild(p);
-                }
-            }
-        }
-        generateParticles();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-            anchor.addEventListener('click',function(e){
-                e.preventDefault();
-                const target=document.querySelector(this.getAttribute('href'));
-                if(target){ target.scrollIntoView({behavior:'smooth'}); }
-            });
-        });
-    </script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click',function(e){
+        e.preventDefault();
+        const target=document.querySelector(this.getAttribute('href'));
+        if(target){target.scrollIntoView({behavior:'smooth'});}
+      });
+    });
+  </script>
 </body>
 </html>
