@@ -2,32 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<title>GrowCaptain | Fractional Growth Partner for Founders</title>
+<title>GrowCaptain – We Navigate. You Scale.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO META -->
-<meta name="description" content="GrowCaptain is a fractional growth partner based in Calicut, Kerala helping founders scale through sales systems, operations, automation, and execution.">
-<meta name="keywords" content="fractional growth partner, business consultant Calicut, sales consulting Kerala, startup growth partner, fractional CMO India">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.growcaptain.in/">
-
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="GrowCaptain | Fractional Growth Partner for Founders">
-<meta property="og:description" content="Fractional growth partner based in Calicut, Kerala helping founders build predictable growth systems.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.growcaptain.in">
-<meta property="og:image" content="https://www.growcaptain.in/images/og-image.jpg">
-
-<!-- FONTS (FIXED) -->
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <style>
-/* ================= YOUR ORIGINAL CSS – UNTOUCHED ================= */
 :root{
   --purple:#7c3aed;
   --orange:#ea580c;
@@ -37,13 +21,15 @@
   --border:#d8dbe0;
   --white:#ffffff;
 }
+
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Satoshi',sans-serif;
   color:var(--text);
   line-height:1.7;
   background:#f4f5f7;
-  overflow-x:hidden;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
 /* HEADER */
@@ -51,52 +37,61 @@ header{
   position:sticky;top:0;z-index:100;
   background:rgba(255,255,255,.9);
   backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   padding:18px 8%;
   display:flex;justify-content:space-between;align-items:center;
 }
 header strong{font-family:'Clash Display';font-size:20px;}
-.nav-links{display:flex;align-items:center;}
-.nav-links a{margin-left:22px;font-size:14px;text-decoration:none;color:var(--text);}
-.nav-links a:hover{color:var(--purple);}
-.mobile-menu-btn{display:none;font-size:24px;cursor:pointer}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a{margin-left:22px;font-size:14px;text-decoration:none;color:var(--text);transition: color 0.3s;}
+.nav-links a:hover{color: var(--purple);}
+.mobile-menu-btn { display: none; font-size: 24px; cursor: pointer; color: var(--text); }
 
 /* GLOBAL */
 section{padding:110px 8%;border-bottom:1px solid var(--border);}
 h1,h2,h3{font-family:'Clash Display';}
-h1{font-size:60px;line-height:1.1}
-h2{font-size:42px;margin-bottom:22px}
-h3{font-size:22px;color:var(--purple);margin-bottom:12px}
-p{color:var(--muted);margin-bottom:18px;max-width:1000px}
+h1{font-size:60px; line-height: 1.1;}
+h2{font-size:42px;margin-bottom:22px;}
+h3{font-size:22px;color:var(--purple); margin-bottom: 12px;}
+p{color:var(--muted);margin-bottom:18px;max-width:1000px;}
 
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.card{background:#fff;border:1px solid var(--border);padding:36px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s;}
+.card:hover{transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05);}
 
-.card{
-  background:#fff;
-  border:1px solid var(--border);
-  padding:36px;
-  border-radius:12px;
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 20px rgba(0,0,0,.05);
-}
-
-/* HERO */
+/* ================= HERO (PARTICLES.JS ANIMATION) ================= */
 .hero{
   position:relative;
   min-height:92vh;
-  background:#0f172a;
   color:#fff;
-  display:flex;
-  align-items:center;
+  background:#0f172a;
+  overflow:hidden;
+  display: flex;
+  align-items: center;
 }
-#particles-js{position:absolute;inset:0;z-index:1}
-.hero-content{position:relative;z-index:2;max-width:800px}
-.hero p{color:#e0e7ff;font-size:18px}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0f172a;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+.hero p{color:#e0e7ff; font-size: 18px;}
 
 .cta-btn{
   display:inline-block;
@@ -104,147 +99,756 @@ p{color:var(--muted);margin-bottom:18px;max-width:1000px}
   background:var(--orange);
   color:#fff;
   padding:16px 38px;
-  border:none;
-  border-radius:8px;
   font-weight:600;
+  border:none;
   cursor:pointer;
+  border-radius:8px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+.cta-btn:hover{
+    background: #c2410c;
+    transform: translateY(-2px);
+}
+.cta-btn.final-cta {
+    display: block;
+    margin: 60px auto 0; /* Center and add margin */
+    width: fit-content;
+}
+.cta-btn.nav-cta {
+  margin-top:0; 
+  padding: 10px 24px; 
+  font-size: 14px;
+  margin-left: 22px;
 }
 
-/* TEAM */
-.team-card{position:relative;overflow:hidden;border-radius:12px}
-.team-card img{width:100%;height:400px;object-fit:cover}
+
+/* ================= METRICS ================= */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:24px;
+  text-align: center;
+}
+.metric strong{
+  display: block;
+  font-size:36px;
+  color:var(--purple);
+  margin-bottom: 8px;
+}
+.metric p {font-size: 14px;}
+
+
+/* ================= FRACTIONAL ================= */
+.split{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
+  align-items:center;
+}
+.fractional-img{
+  height:400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.fractional-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ================= TRAINING ================= */
+.training-card{cursor:pointer;}
+.hover-image{
+  position:fixed;
+  width:320px;
+  height:220px;
+  pointer-events:none;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.9);
+  transition: opacity .2s, transform .2s;
+  z-index:9999;
+}
+.hover-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+
+/* ================= TEAM (BIGGER IMAGES) ================= */
+.team-card{
+  position:relative;
+  overflow:hidden;
+  border-radius: 12px;
+}
+.team-card img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  transition: transform 0.4s;
+}
+.team-card:hover img {
+    transform: scale(1.05);
+}
 .team-overlay{
-  position:absolute;inset:0;
+  position:absolute;
+  inset:0;
   background:linear-gradient(to top,rgba(0,0,0,.9) 10%,transparent);
-  padding:32px;color:#fff;
-  display:flex;flex-direction:column;justify-content:flex-end;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  text-align:left;
+  padding:32px;
+  color:#fff;
+}
+.team-overlay h3 { color: #fff; margin-bottom: 4px;}
+.team-overlay p{
+  font-size:14px;
+  color:#e5e7eb;
+  margin-bottom: 4px;
+}
+.team-overlay p:last-child { margin-bottom: 0; opacity: 0.8;}
+
+
+/* ================= CLIENTS ================= */
+.clients{
+  background:#0b0b0f;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  padding: 80px 0;
+}
+.clients::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(124,58,237,.25), transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(234,88,12,.25), transparent 45%);
+  animation:spin 30s linear infinite;
+  filter: blur(30px);
+}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.clients-inner{position:relative;z-index:2;}
+.logo-track-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+}
+.logo-track{
+  display:flex;
+  gap:60px;
+  animation:scroll 40s linear infinite;
+  width: max-content; /* Important for scrolling */
+}
+.logo-track img{
+  width:160px;
+  height:90px;
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  object-fit:contain;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);} /* Move by half its width */
 }
 
-/* CLIENTS */
-.clients{background:#0b0b0f;color:#fff}
-.logo-track{display:flex;gap:60px;animation:scroll 40s linear infinite;width:max-content}
-.logo-track img{width:160px;height:90px;background:#fff;padding:15px;border-radius:12px;object-fit:contain}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ================= CONTACT & FINAL CTA ================= */
+.contact-section {
+    background:#0b0b0f;
+    border-bottom:none;
+    text-align: center;
+    padding: 80px 8%;
+}
 
-/* FOOTER */
+.contact-icons{
+  display:flex;
+  justify-content:center;
+  gap:36px;
+  margin-bottom: 40px;
+}
+.contact-icons a{
+  font-size:28px;
+  color:#cbd5f5;
+  transition:.3s;
+}
+.contact-icons a:hover{
+  color:var(--orange);
+  transform:translateY(-6px);
+}
+
 footer{
+  text-align:center;
+  padding:30px;
   background:#000;
   color:#cbd5f5;
-  text-align:center;
-  padding:40px 20px;
-  font-size:14px;
+  font-size: 14px;
+}
+
+/* ================= MODAL FORM ================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* Fix for scrollable content on small screens */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10;
+}
+.close-modal:hover { color: var(--dark); }
+
+.modal-content h2 { font-size: 28px; margin-bottom: 24px; }
+
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); font-size: 14px;}
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+.form-input:focus { outline: none; border-color: var(--purple); }
+textarea.form-input { resize: vertical; height: 100px; }
+
+.submit-btn {
+  width: 100%;
+  background: var(--purple);
+  color: #fff;
+  padding: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+.submit-btn:hover { background: #6d28d9; }
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid-3,.grid-4,.metrics,.split{grid-template-columns:1fr;}
+  h1{font-size:42px;}
+  .hero { min-height: 80vh; align-items: flex-start; padding-top: 140px;}
+  .hero-content { text-align: center; margin: 0 auto; }
+  .metrics { grid-template-columns: repeat(3, 1fr); }
+  .fractional-img { height: 300px; order: -1;} /* Image on top for mobile */
+}
+
+@media(max-width: 768px) {
+  /* Header Mobile */
+  .mobile-menu-btn { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hidden state */
+    transition: clip-path 0.4s ease-in-out;
+  }
+  .nav-links.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Visible state */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .nav-links a { margin: 15px 0; font-size: 18px; margin-left: 0;}
+  .cta-btn.nav-cta { margin-left: 0; width: 100%; margin-top: 10px; }
+
+  /* General Adjustments */
+  section { padding: 60px 6%; }
+  h1 { font-size: 38px; }
+  h2 { font-size: 32px; }
+  .card { padding: 24px; }
+  
+  /* Hero */
+  .hero { padding-bottom: 80px; min-height: auto; }
+  .hero-content { padding-top: 20px; }
+  
+  /* Contact */
+  .contact-section { padding-bottom: 60px; }
+  .contact-icons { gap: 24px; }
+  
+  /* Modals */
+  .modal-content { width: 95%; padding: 24px; }
+}
+
+@media(max-width:600px){
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 34px; }
+    .metric strong { font-size: 28px; }
 }
 </style>
 </head>
 
 <body>
 
+<div class="modal-overlay" id="strategyModal">
+  <div class="modal-content">
+    <i class="fa-solid fa-xmark close-modal" onclick="closeModal()"></i>
+    
+    <!-- WRAPPER FOR FORM CONTENT -->
+    <div id="modalFormContent">
+        <h2>Book Your Strategy Call</h2>
+        <p>Fill out the form below, and we'll get back to you to schedule a time.</p>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Work Email</label>
+            <input type="email" id="email" name="email" class="form-input" required placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label for="website" class="form-label">Company Website</label>
+            <input type="url" id="website" name="website" class="form-input" placeholder="https://company.com">
+          </div>
+          <div class="form-group">
+            <label for="challenge" class="form-label">What's your biggest growth challenge?</label>
+            <textarea id="challenge" name="challenge" class="form-input" placeholder="Tell us a bit about what's holding you back..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Request Call</button>
+        </form>
+    </div>
+
+    <!-- WRAPPER FOR SUCCESS MESSAGE (Hidden by default) -->
+    <div id="successMessage" style="display:none; text-align: center; padding: 40px 0;">
+        <i class="fa-regular fa-circle-check" style="font-size: 56px; color: var(--purple); margin-bottom: 24px;"></i>
+        <h2 style="font-size: 32px; margin-bottom: 12px;">Thank You!</h2>
+        <p style="font-size: 16px; color: var(--text);">We've received your request.<br>A Growth Captain will contact you shortly.</p>
+        <button class="cta-btn" onclick="closeModal()" style="margin-top: 20px;">Close</button>
+    </div>
+
+  </div>
+</div>
+
+
 <header>
   <strong>GrowCaptain</strong>
-  <nav class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#training">Training</a>
-    <a href="#clients">Clients</a>
-    <button class="cta-btn">Book Call</button>
+  
+  <!-- Hamburger Menu Button (Visible on Mobile/Tablet) -->
+  <div class="mobile-menu-btn" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  
+  <nav class="nav-links" id="navLinks">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#training" onclick="toggleMenu()">Training</a>
+    <a href="#clients" onclick="toggleMenu()">Clients</a>
+    <button class="cta-btn nav-cta" onclick="openModal(); toggleMenu()">Book Call</button>
   </nav>
 </header>
 
 <section class="hero">
-  <div id="particles-js"></div>
-  <div class="hero-content">
+  <div id="particles-js"></div> <div class="hero-content">
     <h1>We Navigate.<br><span style="color:var(--orange)">You Scale.</span></h1>
-    <p>
-      GrowCaptain is a fractional growth partner based in Calicut, Kerala helping founders build predictable revenue through sales systems, operations, automation, and execution.
-    </p>
-    <button class="cta-btn">Book a Strategy Call</button>
+    <p>GrowCaptain is a growth execution partner built for founders and leadership teams who want predictable, sustainable growth — not random tactics.</p>
+    <p>We step inside your business, diagnose the real bottlenecks across sales, operations, automation, and leadership, and build systems that work without constant founder intervention.</p>
+    <button class="cta-btn" onclick="openModal()">Book a Strategy Call</button>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<section>
+  <h2>Are You Facing These Growth Blockers?</h2>
+  <div class="grid-4">
+    <div class="card">
+        <h3><i class="fa-solid fa-chart-line" style="color:var(--orange); margin-right: 8px;"></i> Unpredictable Leads</h3>
+        <p>No consistent lead engine or qualified demand. You don't know where your next deal is coming from.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fa-solid fa-filter-circle-dollar" style="color:var(--orange); margin-right: 8px;"></i> Low Conversions</h3>
+        <p>Sales conversations happen, but they don't close reliably. Your pipeline is leaky.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fa-solid fa-user-lock" style="color:var(--orange); margin-right: 8px;"></i> Founder Dependency</h3>
+        <p>Every major decision and deal needs your involvement. You are the bottleneck.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fa-solid fa-sitemap" style="color:var(--orange); margin-right: 8px;"></i> Operational Chaos</h3>
+        <p>No SOPs, clear ownership, or execution rhythm. Things slip through the cracks constantly.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="metrics">
+    <div class="metric"><strong>500+</strong><p>Founders Guided</p></div>
+    <div class="metric"><strong>45%</strong><p>Avg YOY Growth</p></div>
+    <div class="metric"><strong>3.5 Mo</strong><p>Avg. Engagement</p></div>
+    <div class="metric"><strong>98%</strong><p>Client Retention</p></div>
+    <div class="metric"><strong>₹2.5Cr+</strong><p>Revenue Enabled</p></div>
+    <div class="metric"><strong>6</strong><p>Growth Captains</p></div>
+  </div>
+</section>
+
+<section id="services" style="background: #fff;">
   <h2>Our Services</h2>
+  <p>We build connected systems — not isolated tactics — so growth compounds instead of breaking.</p>
+
   <div class="grid-3">
-    <div class="card"><h3>Sales Systems</h3><p>Funnels, CRM, scripts, follow-ups.</p></div>
-    <div class="card"><h3>Operations & SOPs</h3><p>Execution rhythm and ownership clarity.</p></div>
-    <div class="card"><h3>Automation & AI</h3><p>CRM automation and workflows.</p></div>
+    <div class="card"><h3>Sales Systems</h3><p>Funnels, CRM setup, script development, follow-up sequences, pipeline tracking, and reporting for predictable revenue.</p></div>
+    <div class="card"><h3>Brand & Positioning</h3><p>Crafting clear messaging and a compelling narrative so your ideal customers instantly understand your value.</p></div>
+    <div class="card"><h3>Operations & SOPs</h3><p>Establishing execution rhythms, defining ownership, and documenting processes to remove chaos and ensure consistency.</p></div>
+    <div class="card"><h3>Automation & AI</h3><p>Implementing CRM automation, WhatsApp business flows, and internal AI workflows to save time and reduce errors.</p></div>
+    <div class="card"><h3>Finance & Visibility</h3><p>Building clear dashboards for runway clarity, forecasting, and data-driven decision support.</p></div>
+    <div class="card"><h3>Enablement & Culture</h3><p>Creating hiring scorecards, onboarding playbooks, and performance management systems to build high-performing teams.</p></div>
   </div>
 </section>
 
-<!-- TEAM -->
+<section class="split">
+  <div>
+    <h2>Fractional Growth Partner</h2>
+    <p>As businesses scale, growth becomes a leadership problem — not a marketing one.</p>
+    <p>GrowCaptain works as a fractional CGO / CMO embedded inside your business, aligning strategy with execution across teams.</p>
+    <p>We set priorities, review weekly execution, fix broken systems, and hold teams accountable — without the cost and commitment of a full-time executive hire.</p>
+    <button class="cta-btn" style="background: var(--purple); margin-top: 30px;" onclick="openModal()">Explore Fractional Model</button>
+  </div>
+  <div class="fractional-img">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop" alt="Team meeting">
+  </div>
+</section>
+
+<section id="training" style="background: #fff;">
+  <h2>Sales Training Programs</h2>
+  <p>Equip your team with the skills and discipline to close more deals.</p>
+  <div class="grid-3">
+    <!-- Updated with images in mouse animation folder -->
+    <div class="card training-card" data-img="mouse animation/1.jpeg">
+      <h3>1-Day Sales Workshop</h3>
+      <p>Intensive session covering pipeline audit, advanced objection handling, and immediate conversion improvement tactics.</p>
+    </div>
+    <div class="card training-card" data-img="mouse animation/2.jpeg">
+      <h3>2-Week Sales Program</h3>
+      <p>Hands-on program with call reviews, daily feedback loops, follow-up discipline building, and live pipeline correction.</p>
+    </div>
+    <div class="card training-card" data-img="mouse animation/3.jpeg">
+      <h3>1-Month Sales System</h3>
+      <p>Complete transformation including CRM setup, customized scripts, dashboard creation, and ongoing sales enablement.</p>
+    </div>
+  </div>
+</section>
+
+<div class="hover-image" id="hoverImage"><img></div>
+
 <section>
   <h2>Meet Our Team</h2>
   <p>Practitioners who have built and scaled businesses.</p>
-
   <div class="grid-3">
     <div class="team-card">
-      <img src="images/shameem.png" alt="Shameem - Business Strategist and Sales Trainer">
+      <img src="images/shameem.jpg" alt="Shameem">
       <div class="team-overlay">
         <h3>Shameem</h3>
-        <p>Business Strategist & Sales Trainer</p>
+        <p style="color: var(--orange); font-weight: 600;">Business Strategist & Sales Trainer</p>
+        <p>Designs scalable sales systems and trains teams to execute with precision.</p>
       </div>
     </div>
     <div class="team-card">
-      <img src="images/unaize.png" alt="Unaize - Business Strategist and Sales Consultant">
+      <img src="images/unaize.png" alt="Unaize">
       <div class="team-overlay">
         <h3>Unaize</h3>
-        <p>Business Strategist & Sales Consultant</p>
+        <p style="color: var(--orange); font-weight: 600;">Business Strategist & Sales Consultant</p>
+        <p>Works directly with founders to identify and fix critical pipeline bottlenecks.</p>
       </div>
     </div>
     <div class="team-card">
-      <img src="images/abdullah.jpeg" alt="Abdullah - Business Strategist and Sales Consultant">
+      <img src="images/abdullah.jpeg" alt="Abdullah">
       <div class="team-overlay">
         <h3>Abdullah</h3>
-        <p>Business Strategist & Sales Consultant</p>
+        <p style="color: var(--orange); font-weight: 600;">Business Strategist & Sales Consultant</p>
+        <p>Specializes in building execution discipline and operational clarity across teams.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
 <section id="clients" class="clients">
-  <h2 style="text-align:center">Clients We’ve Worked With</h2>
-  <div class="logo-track">
-    <img src="logos/1.png"><img src="logos/2.png"><img src="logos/3.png">
-    <img src="logos/4.jpg"><img src="logos/5.png"><img src="logos/6.png">
-    <img src="logos/1.png"><img src="logos/2.png"><img src="logos/3.png">
-    <img src="logos/4.jpg"><img src="logos/5.png"><img src="logos/6.png">
+  <div class="clients-inner">
+    <h2 style="text-align:center; margin-bottom: 40px;">Clients We’ve Worked With</h2>
+    <div class="logo-track-container">
+        <div class="logo-track">
+            <!-- First set of logos 1-15 -->
+            <img src="logos/1.png" alt="Client Logo 1">
+            <img src="logos/2.png" alt="Client Logo 2">
+            <img src="logos/3.png" alt="Client Logo 3">
+            <img src="logos/4.jpg" alt="Client Logo 4">
+            <img src="logos/5.png" alt="Client Logo 5">
+            <img src="logos/6.png" alt="Client Logo 6">
+            <img src="logos/7.png" alt="Client Logo 7">
+            <img src="logos/8.png" alt="Client Logo 8">
+            <img src="logos/9.png" alt="Client Logo 9">
+            <img src="logos/10.png" alt="Client Logo 10">
+            <img src="logos/11.png" alt="Client Logo 11">
+            <img src="logos/12.png" alt="Client Logo 12">
+            <img src="logos/13.png" alt="Client Logo 13">
+            <img src="logos/14.png" alt="Client Logo 14">
+            <img src="logos/15.png" alt="Client Logo 15">
+            
+            <!-- Duplicate set for infinite scroll effect -->
+            <img src="logos/1.png" alt="Client Logo 1">
+            <img src="logos/2.png" alt="Client Logo 2">
+            <img src="logos/3.png" alt="Client Logo 3">
+            <img src="logos/4.jpg" alt="Client Logo 4">
+            <img src="logos/5.png" alt="Client Logo 5">
+            <img src="logos/6.png" alt="Client Logo 6">
+            <img src="logos/7.png" alt="Client Logo 7">
+            <img src="logos/8.png" alt="Client Logo 8">
+            <img src="logos/9.png" alt="Client Logo 9">
+            <img src="logos/10.png" alt="Client Logo 10">
+            <img src="logos/11.png" alt="Client Logo 11">
+            <img src="logos/12.png" alt="Client Logo 12">
+            <img src="logos/13.png" alt="Client Logo 13">
+            <img src="logos/14.png" alt="Client Logo 14">
+            
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2 style="color: #fff;">Ready to build predictable growth?</h2>
+  <p style="color: #e0e7ff; margin: 0 auto 30px auto;">Stop guessing and start executing with a proven system.</p>
+  <button class="cta-btn final-cta" onclick="openModal()">Book a Strategy Call</button>
+  
+  <div class="contact-icons" style="margin-top: 60px;">
+    <a href="https://wa.me/918129589051" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/grow.captain" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/grow-captainbusinessconsulting" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:info@growcaptain.in"><i class="fa-solid fa-envelope"></i></a>
   </div>
 </section>
 
 <footer>
-  <strong>GrowCaptain</strong><br><br>
-  HiLITE Business Park,<br>
-  Poovangal, Calicut,<br>
-  Kerala, India<br><br>
   © 2026 GrowCaptain — We Navigate. You Scale.
 </footer>
 
-<!-- LOCAL SEO SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GrowCaptain",
-  "url": "https://www.growcaptain.in",
-  "logo": "https://www.growcaptain.in/images/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "HiLITE Business Park, Poovangal",
-    "addressLocality": "Calicut",
-    "addressRegion": "Kerala",
-    "postalCode": "673014",
-    "addressCountry": "IN"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-8129589051",
-    "contactType": "Business Consulting"
-  }
-}
-</script>
-
 <script>
-particlesJS("particles-js",{particles:{number:{value:80},line_linked:{enable:true}}});
+/* HERO PARTICLES ANIMATION */
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": ["#7c3aed", "#ea580c"] /* Your brand colors */
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.2,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 0.6
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+
+/* MODAL FUNCTIONALITY */
+const modal = document.getElementById('strategyModal');
+
+function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Disable background scrolling
+    
+    // RESET FORM STATE ON OPEN
+    document.getElementById('bookingForm').reset();
+    document.getElementById('modalFormContent').style.display = 'block';
+    document.getElementById('successMessage').style.display = 'none';
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Enable background scrolling
+}
+
+// Close modal when clicking outside the content
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Handle form submission
+document.getElementById('bookingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Switch from Form view to Success Message view
+    document.getElementById('modalFormContent').style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
+});
+
+
+/* MOBILE MENU TOGGLE */
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+}
+
+
+/* TRAINING HOVER */
+const hoverBox=document.getElementById("hoverImage");
+const hoverImg=hoverBox.querySelector("img");
+document.querySelectorAll(".training-card").forEach(card=>{
+  card.addEventListener("mouseenter",()=>{
+    const imgPath = card.getAttribute('data-img');
+    if (imgPath) {
+        hoverImg.src=imgPath;
+        hoverBox.style.opacity="1";
+        hoverBox.style.transform="translate(-50%,-50%) scale(1)";
+    }
+  });
+  card.addEventListener("mousemove",e=>{
+    hoverBox.style.left=e.clientX+"px";
+    hoverBox.style.top=e.clientY+"px";
+  });
+  card.addEventListener("mouseleave",()=>{
+    hoverBox.style.opacity="0";
+    hoverBox.style.transform="translate(-50%,-50%) scale(.9)";
+  });
+});
 </script>
 
 </body>
